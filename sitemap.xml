@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://www.autozastava24.cz/</loc>
     <lastmod>2025-11-11</lastmod>
@@ -8,70 +11,124 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.autozastava24.cz/"/>
   </url>
-  <url>
-    <loc>https://www.autozastava24.cz/#jak-to-funguje</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.autozastava24.cz/#vyhody</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.autozastava24.cz/#formular</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.autozastava24.cz/#kontakt</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.autozastava24.cz/blog/</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.autozastava24.cz/blog/jak-funguje-pujcka-pod-zastavu-auta/</loc>
-    <lastmod>2025-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- About Page -->
   <url>
     <loc>https://www.autozastava24.cz/o-nas</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Blog Hub -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Articles - Průvodce (Guides) -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/jak-funguje-pujcka-pod-zastavu-auta/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/zastavni-smlouva-na-auto-kompletni-pruvodce/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles - Srovnání (Comparisons) -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-vs-bankovni-uver/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/zastava-auta-vs-spotrebitelsky-uver/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/leasing-vs-pujcka-pod-zastavu-auta/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles - Vozidla (Vehicles) -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-skody/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-volkswagen-modely-hodnoty/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Articles - Finanční Rady (Financial Advice) -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/tipy-jak-efektivne-vyuzit-pujcku-pod-zastavu/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/rizeni-rodinnych-financi-kdy-vyuzit-zastavu-auta/</loc>
+    <lastmod>2025-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://www.autozastava24.cz/obchodni-podminky</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
+
   <url>
     <loc>https://www.autozastava24.cz/ochrana-osobnich-udaju</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
+
   <url>
     <loc>https://www.autozastava24.cz/informace-o-spolecnosti</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
+
   <url>
     <loc>https://www.autozastava24.cz/mapa-stranek</loc>
     <lastmod>2025-11-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
+
 </urlset>
