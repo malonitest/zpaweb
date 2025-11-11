@@ -1,5 +1,5 @@
 # Blog Articles SEO & AI Search Strategy
-**CashNDrive Blog Content Plan**
+**AutoZástava24 Blog Content Plan**
 **Date:** November 11, 2025
 **Categories:** Průvodce | Srovnání | Vozidla | Finanční Rady
 
@@ -51,7 +51,7 @@ Focus: Money management, financial tips, strategic advice
 **Internal Links:**
 - Link to: Srovnání bankovní úvěr
 - Link to: Dokumenty potřebné
-- Link to: CashNDrive model
+- Link to: AutoZástava24 model
 
 ---
 
@@ -325,19 +325,19 @@ Připravte si dokumenty podle checklistu → Rychlé schválení do 24h
 3. Vymazat zástavu
 4. Pak prodat
 
-## 8. CashNDrive Model vs. Tradiční Zástava
+## 8. AutoZástava24 Model vs. Tradiční Zástava
 ### Tradiční zástava
 - Vy vlastník
 - Zástavní právo registrováno
 - Auto u vás
 
-### CashNDrive (výkup + pronájem)
+### AutoZástava24 (výkup + pronájem)
 - My vlastník
 - Vy nájemce
 - Auto u vás
 - Možnost odkupu
 
-**Výhody CashNDrive:**
+**Výhody AutoZástava24:**
 - Přijímáme i auta v leasingu
 - Individuální posouzení
 - Flexibilní podmínky
@@ -593,7 +593,7 @@ Vlastníte auto bez zástavy?
 4. Rozhodněte se podle VAŠICH priorit
 
 ### Chcete rychlé peníze s autem u vás?
-CashNDrive nabízí výkup s pronájmem → Peníze za 1-2 dny
+AutoZástava24 nabízí výkup s pronájmem → Peníze za 1-2 dny
 [CTA: Nezávazná žádost]
 ```
 

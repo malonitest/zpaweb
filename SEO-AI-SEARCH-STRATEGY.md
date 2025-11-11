@@ -1,5 +1,5 @@
 # SEO & AI Search Strategy Document
-**AutoZástava24 (CashNDrive)**
+**AutoZástava24 (AutoZástava24)**
 **Date:** November 11, 2025
 **Focus:** AI Search Optimization & Content Strategy
 
@@ -287,9 +287,9 @@ Add to index.html:
 {
   "@context": "https://schema.org",
   "@type": ["FinancialService", "LocalBusiness"],
-  "name": "CashNDrive",
+  "name": "AutoZástava24",
   "alternateName": "AutoZástava24",
-  "legalName": "CashNDrive s.r.o.",
+  "legalName": "AutoZástava24 s.r.o.",
   "description": "Rychlá vyplacení pod zástavu auta. Auto zůstává u vás, peníze do 24 hodin.",
   "url": "https://www.autozastava24.cz",
   "logo": "https://www.autozastava24.cz/logo.png",
