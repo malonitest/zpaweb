@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoZástava24 - rychlá půjčka pod zástavu auta. Jezdíte dál. Peníze máte do 24 hodin. Online schválení do 15 minut.">
+    <meta name="keywords" content="půjčka, zástava auta, rychlá půjčka, AutoZástava24, finanční služby, auto zástava">
+    <meta name="author" content="AutoZástava24">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AutoZástava24 - Rychlá půjčka pod zástavu auta">
+    <meta property="og:description" content="Jezdíte dál. Peníze máte do 24 hodin. Rychlé schválení, snadná žádost online.">
+    <meta property="og:url" content="https://www.autozastava24.cz">
+    <meta property="og:image" content="https://www.autozastava24.cz/og-image.jpg">
+    <meta property="og:locale" content="cs_CZ">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutoZástava24 - Rychlá půjčka pod zástavu auta">
+    <meta name="twitter:description" content="Jezdíte dál. Peníze máte do 24 hodin.">
+    <meta name="twitter:image" content="https://www.autozastava24.cz/og-image.jpg">
+    
+    <!-- PWA -->
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AutoZástava24">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <title>AutoZástava24 - Jezdíte dál. Peníze máte do 24 hodin.</title>
+    
+    <!-- Tailwind CSS CDN (with fallback styles below) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (typeof tailwind !== 'undefined') {
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1e40af',
+                            secondary: '#3b82f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Schema.org FinancialService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "AutoZástava24",
+        "description": "Rychlá půjčka pod zástavu auta s možností dalšího užívání vozidla. Peníze do 24 hodin.",
+        "url": "https://www.autozastava24.cz",
+        "logo": "https://www.autozastava24.cz/logo.png",
+        "image": "https://www.autozastava24.cz/og-image.jpg",
+        "telephone": "+420 XXX XXX XXX",
+        "email": "info@autozastava24.cz",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CZ",
+            "addressLocality": "Praha"
+        },
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Česká republika"
+        },
+        "serviceType": "Půjčka pod zástavu auta",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Finanční služby",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Půjčka pod zástavu auta",
+                        "description": "Rychlá půjčka s výplatou do 24 hodin, auto zůstává k vašemu užívání"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "156"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Fallback utility classes (if Tailwind doesn't load) */
+        .hidden { display: none; }
+        .block { display: block; }
+        .inline-block { display: inline-block; }
+        .flex { display: flex; }
+        .grid { display: grid; }
+        
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        
+        .space-x-2 > * + * { margin-left: 0.5rem; }
+        .space-x-3 > * + * { margin-left: 0.75rem; }
+        .space-x-6 > * + * { margin-left: 1.5rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .space-y-8 > * + * { margin-top: 2rem; }
+        
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .gap-12 { gap: 3rem; }
+        
+        .text-center { text-align: center; }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-6xl { font-size: 3.75rem; }
+        
+        .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        
+        .text-white { color: #fff; }
+        .text-gray-400 { color: #9ca3af; }
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-900 { color: #111827; }
+        .text-blue-100 { color: #dbeafe; }
+        .text-green-300 { color: #86efac; }
+        
+        .bg-white { background-color: #fff; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .bg-gray-800 { background-color: #1f2937; }
+        .bg-gray-900 { background-color: #111827; }
+        .bg-blue-100 { background-color: #dbeafe; }
+        
+        .border { border: 1px solid #e5e7eb; }
+        .border-t { border-top: 1px solid #e5e7eb; }
+        .border-gray-300 { border-color: #d1d5db; }
+        .border-gray-800 { border-color: #1f2937; }
+        
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .p-12 { padding: 3rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .px-8 { padding-left: 2rem; padding-right: 2rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+        .py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+        
+        .m-0 { margin: 0; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mt-1 { margin-top: 0.25rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 0.75rem; }
+        .mr-2 { margin-right: 0.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .ml-2 { margin-left: 0.5rem; }
+        
+        .w-full { width: 100%; }
+        .w-4 { width: 1rem; }
+        .w-6 { width: 1.5rem; }
+        .w-8 { width: 2rem; }
+        .w-12 { width: 3rem; }
+        .w-16 { width: 4rem; }
+        .w-20 { width: 5rem; }
+        .h-4 { height: 1rem; }
+        .h-6 { height: 1.5rem; }
+        .h-8 { height: 2rem; }
+        .h-12 { height: 3rem; }
+        .h-16 { height: 4rem; }
+        .h-20 { height: 5rem; }
+        .h-auto { height: auto; }
+        
+        .max-w-2xl { max-width: 42rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-5xl { max-width: 64rem; }
+        
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        .z-50 { z-index: 50; }
+        
+        .transition { transition: all 0.3s ease; }
+        .cursor-pointer { cursor: pointer; }
+        
+        .leading-tight { line-height: 1.25; }
+        
+        /* Custom primary color */
+        .bg-primary { background-color: #1e40af; }
+        .text-primary { color: #1e40af; }
+        .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
+        .hover\:text-primary:hover { color: #1e40af; }
+        .hover\:text-white:hover { color: #fff; }
+        .hover\:bg-gray-100:hover { background-color: #f3f4f6; }
+        .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        
+        /* Grid layouts */
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:flex { display: flex; }
+            .md\:block { display: block; }
+            .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+            .md\:p-12 { padding: 3rem; }
+            .md\:text-6xl { font-size: 3.75rem; }
+            .md\:text-4xl { font-size: 2.25rem; }
+            .md\:text-2xl { font-size: 1.5rem; }
+        }
+        
+        @media (max-width: 767px) {
+            .md\:hidden { display: none; }
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        
+        header a {
+            text-decoration: none;
+            color: #374151;
+            transition: color 0.3s;
+        }
+        
+        header a:hover {
+            color: #1e40af;
+        }
+        
+        /* Buttons */
+        button, .btn {
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-weight: 600;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Form inputs */
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        /* Lists */
+        ul {
+            list-style: none;
+        }
+        
+        /* Details/Summary */
+        details {
+            cursor: pointer;
+        }
+        
+        summary {
+            list-style: none;
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                </svg>
+                <span class="text-2xl font-bold text-primary">AutoZástava24</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#jak-to-funguje" class="text-gray-700 hover:text-primary transition">Jak to funguje</a>
+                <a href="#vyhody" class="text-gray-700 hover:text-primary transition">Výhody</a>
+                <a href="#kontakt" class="text-gray-700 hover:text-primary transition">Kontakt</a>
+            </div>
+            <a href="#formular" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                Chci půjčku
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-up">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Jezdíte dál.<br>
+                        Peníze máte do 24 hodin.
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                        Rychlá půjčka pod zástavu auta. Auto zůstává u vás.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg">Online schválení do 15 minut</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg">Výplata peněz do 24 hodin</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 mr-3 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-lg">Auto zůstává k vašemu užívání</span>
+                        </li>
+                    </ul>
+                    <a href="#formular" class="inline-block bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition shadow-lg">
+                        Získat peníze hned
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <svg class="w-full h-auto" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="500" height="400" fill="none"/>
+                        <path d="M100 200 L150 180 L350 180 L400 200 L380 280 L120 280 Z" fill="white" opacity="0.2"/>
+                        <circle cx="150" cy="260" r="20" fill="white" opacity="0.3"/>
+                        <circle cx="350" cy="260" r="20" fill="white" opacity="0.3"/>
+                        <rect x="180" y="190" width="140" height="60" fill="white" opacity="0.2"/>
+                        <circle cx="250" cy="150" r="60" fill="white" opacity="0.15"/>
+                        <text x="230" y="160" fill="white" font-size="40" font-weight="bold">24h</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Form Section -->
+    <section id="formular" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-3 text-gray-900">
+                    Žádost o půjčku
+                </h2>
+                <p class="text-center text-gray-600 mb-8">
+                    Vyplňte formulář a my vás budeme kontaktovat do 15 minut
+                </p>
+                
+                <form id="leadForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="jmeno" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Jméno a příjmení *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="jmeno" 
+                                name="jmeno" 
+                                required 
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="Jan Novák"
+                            >
+                        </div>
+                        
+                        <div>
+                            <label for="telefon" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Telefon *
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="telefon" 
+                                name="telefon" 
+                                required 
+                                pattern="[0-9\s+]+"
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="+420 XXX XXX XXX"
+                            >
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                            E-mail *
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                            placeholder="vas@email.cz"
+                        >
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="castka" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Požadovaná částka *
+                            </label>
+                            <select 
+                                id="castka" 
+                                name="castka" 
+                                required 
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                            >
+                                <option value="">Vyberte částku</option>
+                                <option value="50000">50 000 Kč</option>
+                                <option value="100000">100 000 Kč</option>
+                                <option value="150000">150 000 Kč</option>
+                                <option value="200000">200 000 Kč</option>
+                                <option value="250000">250 000 Kč</option>
+                                <option value="300000">300 000 Kč a více</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="vozidlo" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Značka vozidla *
+                            </label>
+                            <input 
+                                type="text" 
+                                id="vozidlo" 
+                                name="vozidlo" 
+                                required 
+                                class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                placeholder="Škoda Octavia"
+                            >
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="poznamka" class="block text-sm font-semibold text-gray-700 mb-2">
+                            Poznámka (volitelné)
+                        </label>
+                        <textarea 
+                            id="poznamka" 
+                            name="poznamka" 
+                            rows="3" 
+                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                            placeholder="Dodatečné informace..."
+                        ></textarea>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input 
+                            type="checkbox" 
+                            id="souhlas" 
+                            name="souhlas" 
+                            required 
+                            class="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-blue-500"
+                        >
+                        <label for="souhlas" class="ml-2 text-sm text-gray-600">
+                            Souhlasím se zpracováním osobních údajů a obchodními podmínkami *
+                        </label>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        class="w-full bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition shadow-lg"
+                    >
+                        Odeslat nezávaznou žádost
+                    </button>
+                    
+                    <p class="text-center text-sm text-gray-500">
+                        Odesláním formuláře vás budeme kontaktovat do 15 minut
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="jak-to-funguje" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+                Jak to funguje?
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Jednoduchý proces ve 4 krocích
+            </p>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Vyplňte formulář</h3>
+                    <p class="text-gray-600">Rychle a jednoduše online</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Ohodnocení vozidla</h3>
+                    <p class="text-gray-600">Posouzení hodnoty vašeho auta</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Schválení</h3>
+                    <p class="text-gray-600">Online do 15 minut</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl font-bold text-primary">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Výplata peněz</h3>
+                    <p class="text-gray-600">Do 24 hodin na váš účet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="vyhody" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+                Proč AutoZástava24?
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Jsme rychlí, spolehliví a transparentní
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Rychlost</h3>
+                    <p class="text-gray-600">
+                        Schválení do 15 minut, peníze na účtu do 24 hodin. Žádné zdlouhavé čekání.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Výhodné podmínky</h3>
+                    <p class="text-gray-600">
+                        Férové sazby, žádné skryté poplatky. Vše transparentně a jasně.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Individuální přístup</h3>
+                    <p class="text-gray-600">
+                        Každý klient je pro nás jedinečný. Přizpůsobíme podmínky vašim potřebám.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Bezpečnost</h3>
+                    <p class="text-gray-600">
+                        Vaše data jsou v bezpečí. Dodržujeme všechny předpisy o ochraně osobních údajů.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                            <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Jezdíte dál</h3>
+                    <p class="text-gray-600">
+                        Auto zůstává u vás. Můžete s ním normálně jezdit a užívat si svobodu.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+                    <div class="text-primary mb-4">
+                        <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Snadné schválení</h3>
+                    <p class="text-gray-600">
+                        Minimální požadavky, žádné složité doklady. Online proces je jednoduchý a rychlý.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+                Často kladené otázky
+            </h2>
+            <p class="text-center text-gray-600 mb-12">
+                Odpovědi na nejčastější dotazy
+            </p>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
+                    <summary class="font-semibold text-lg cursor-pointer">
+                        Jak rychle dostanu peníze?
+                    </summary>
+                    <p class="mt-3 text-gray-600">
+                        Po schválení žádosti, které trvá do 15 minut, vám peníze vyplatíme do 24 hodin na váš bankovní účet.
+                    </p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
+                    <summary class="font-semibold text-lg cursor-pointer">
+                        Musím zanechat auto u vás?
+                    </summary>
+                    <p class="mt-3 text-gray-600">
+                        Ne! Auto zůstává u vás a můžete s ním normálně jezdit. Pouze se zaregistruje zástavní právo.
+                    </p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
+                    <summary class="font-semibold text-lg cursor-pointer">
+                        Jaké auto můžu použít jako zástavu?
+                    </summary>
+                    <p class="mt-3 text-gray-600">
+                        Akceptujeme osobní automobily, dodávky i motocykly. Auto musí být vaše a bez zástavy.
+                    </p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
+                    <summary class="font-semibold text-lg cursor-pointer">
+                        Jaké jsou podmínky pro schválení?
+                    </summary>
+                    <p class="mt-3 text-gray-600">
+                        Musíte být majitelem vozidla, starší 18 let a mít trvalý pobyt v ČR. Nepotřebujeme příjem ani pracovní smlouvu.
+                    </p>
+                </details>
+                
+                <details class="bg-gray-50 rounded-lg p-6 hover:bg-gray-100 transition">
+                    <summary class="font-semibold text-lg cursor-pointer">
+                        Jaká je maximální výše půjčky?
+                    </summary>
+                    <p class="mt-3 text-gray-600">
+                        Výše půjčky závisí na hodnotě vašeho vozidla. Obvykle poskytujeme 50-70% tržní hodnoty auta.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+                    Máte otázky?
+                </h2>
+                <p class="text-center text-gray-600 mb-12">
+                    Rádi vám poradíme a odpovíme na všechny dotazy
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">Telefon</h3>
+                        <p class="text-gray-600">+420 XXX XXX XXX</p>
+                        <p class="text-sm text-gray-500 mt-1">Po-Pá 8:00-18:00</p>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">E-mail</h3>
+                        <p class="text-gray-600">info@autozastava24.cz</p>
+                        <p class="text-sm text-gray-500 mt-1">Odpovíme do 2 hodin</p>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">Pobočka</h3>
+                        <p class="text-gray-600">Praha</p>
+                        <p class="text-sm text-gray-500 mt-1">Po domluvě</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Připraveni na rychlou půjčku?
+            </h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Začněte ještě dnes a získejte peníze do 24 hodin
+            </p>
+            <a href="#formular" class="inline-block bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition shadow-lg">
+                Vyplnit formulář
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                        </svg>
+                        <span class="text-xl font-bold">AutoZástava24</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Rychlá půjčka pod zástavu auta. Jezdíte dál, peníze máte do 24 hodin.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Rychlé odkazy</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#jak-to-funguje" class="hover:text-white transition">Jak to funguje</a></li>
+                        <li><a href="#vyhody" class="hover:text-white transition">Výhody</a></li>
+                        <li><a href="#formular" class="hover:text-white transition">Žádost o půjčku</a></li>
+                        <li><a href="#kontakt" class="hover:text-white transition">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Právní informace</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Obchodní podmínky</a></li>
+                        <li><a href="#" class="hover:text-white transition">Ochrana osobních údajů</a></li>
+                        <li><a href="#" class="hover:text-white transition">Informace o společnosti</a></li>
+                        <li><a href="sitemap.xml" class="hover:text-white transition">Mapa stránek</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li>+420 XXX XXX XXX</li>
+                        <li>info@autozastava24.cz</li>
+                        <li>Praha, Česká republika</li>
+                        <li class="pt-2">
+                            <div class="flex space-x-3">
+                                <a href="#" class="hover:text-white transition" aria-label="Facebook">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                                <a href="#" class="hover:text-white transition" aria-label="Instagram">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 AutoZástava24. Všechna práva vyhrazena.</p>
+                <p class="mt-2">
+                    IČO: XXXXXXXX | Poskytovatel spotřebitelského úvěru na základě licence ČNB
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Service Worker Registration (PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => console.log('SW registered'))
+                    .catch(error => console.log('SW registration failed'));
+            });
+        }
+
+        // Form Submission Handler
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Odesílám...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call (replace with actual endpoint)
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // Success
+                alert('Děkujeme! Vaši žádost jsme přijali.\n\nBudeme vás kontaktovat do 15 minut na uvedeném telefonním čísle nebo emailu.');
+                this.reset();
+                
+                // Track conversion (Google Analytics, Facebook Pixel, etc.)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXX',
+                        'value': parseFloat(data.castka),
+                        'currency': 'CZK'
+                    });
+                }
+            } catch (error) {
+                alert('Omlouváme se, došlo k chybě. Zkuste to prosím znovu nebo nás kontaktujte telefonicky.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
