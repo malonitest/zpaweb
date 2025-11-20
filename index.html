@@ -1761,8 +1761,8 @@
             Object.keys(payload).forEach(key => payload[key] === undefined && delete payload[key]);
             
             try {
-                // Call Leads API (https://api.autozastava24.cz/leads)
-                const response = await fetch('https://api.autozastava24.cz/leads', {
+                // Call Leads API
+                const response = await fetch('https://api.zpetnypronajemaut.cz/v1/leads', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
