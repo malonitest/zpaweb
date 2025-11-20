@@ -1718,6 +1718,8 @@
 
     <!-- JavaScript -->
     <script>
+        console.log('Script loaded - AutoZastava24');
+        
         // Service Worker Registration (PWA)
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -1728,7 +1730,11 @@
         }
 
         // Form Submission Handler with API Integration
-        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+        const leadForm = document.getElementById('leadForm');
+        console.log('Lead form element:', leadForm);
+        
+        if (leadForm) {
+            leadForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const formData = new FormData(this);
@@ -1832,6 +1838,9 @@
                 }
             });
         });
+        } else {
+            console.error('Lead form not found! Check if element with id="leadForm" exists.');
+        }
 
         // Add animation on scroll
         const observerOptions = {
