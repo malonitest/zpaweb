@@ -4,9 +4,10 @@
   "description": "Moderní webová stránka pro společnost AutoZástava24, poskytující rychlé půjčky pod zástavu auta.",
   "main": "service-worker.js",
   "scripts": {
-    "build": "npm run build:css",
+    "build": "npm run build:css && npm run generate:sitemap",
     "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
     "watch:css": "tailwindcss -i ./src/input.css -o ./styles.css --watch",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
