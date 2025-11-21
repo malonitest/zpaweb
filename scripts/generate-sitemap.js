@@ -28,6 +28,7 @@ const blogCategories = {
   'jak-funguje': { priority: 0.9, category: 'Průvodce' },
   'dokumenty': { priority: 0.8, category: 'Průvodce' },
   'zastavni-smlouva': { priority: 0.8, category: 'Průvodce' },
+  'ohodnoceni': { priority: 0.9, category: 'Průvodce' },
   'pujcka-pod-zastavu-vs': { priority: 0.8, category: 'Srovnání' },
   'zastava-auta-vs': { priority: 0.8, category: 'Srovnání' },
   'leasing-vs': { priority: 0.8, category: 'Srovnání' },
