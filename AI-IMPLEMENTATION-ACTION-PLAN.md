@@ -19,10 +19,12 @@
 
 ### ✅ Completed Actions
 
-- [x] Article 1 deployed: Ohodnocení Auta Pro Půjčku
-- [x] Sitemap generator fixed for proper categorization
-- [x] Blog index updated to show all Průvodce articles
+- [x] Article 1 deployed: Ohodnocení Auta Pro Půjčku (Commit 1cfb7a8)
+- [x] Sitemap generator fixed for proper categorization (Commit 9335abe)
+- [x] Blog index updated to show all Průvodce articles (Commit 0533547)
 - [x] Microsoft research analyzed (3x conversion opportunity identified)
+- [x] Action 1.1: Bing Webmaster Tools registered (November 22, 2025)
+- [x] Action 1.2: Microsoft Clarity implemented on all pages (Commit 292f0db)
 
 ### 🔥 Priority Actions (Week 1)
 
@@ -53,20 +55,20 @@
 #### Action 1.2: Implement Microsoft Clarity
 **Deadline:** November 27, 2025  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED - November 22, 2025
 
 **Steps:**
-1. Register at https://clarity.microsoft.com/
-2. Create new project: "AutoZástava24"
-3. Get tracking code (Project ID)
-4. Add tracking code to all pages (before `</body>` tag)
+1. Register at https://clarity.microsoft.com/ ✅
+2. Create new project: "Autozastava" ✅
+3. Get tracking code (Project ID: ua2ebm7dg9) ✅
+4. Add tracking code to all pages (before `</body>` tag) ✅
 5. Configure custom events:
-   - Form submissions (`clarity("event", "form_submit")`)
-   - Phone clicks (`clarity("event", "phone_click")`)
-   - FAQ clicks (`clarity("event", "faq_interaction")`)
-   - Scroll depth (25%, 50%, 75%, 90%)
+   - Form submissions (`clarity("event", "form_submit")`) ⏳ Next
+   - Phone clicks (`clarity("event", "phone_click")`) ⏳ Next
+   - FAQ clicks (`clarity("event", "faq_interaction")`) ⏳ Next
+   - Scroll depth (25%, 50%, 75%, 90%) ⏳ Next
 
-**Code to Add:**
+**Code Added:**
 ```html
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
@@ -74,21 +76,24 @@
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "YOUR_PROJECT_ID");
+})(window, document, "clarity", "script", "ua2ebm7dg9");
 </script>
 ```
 
-**Files to Update:**
-- `/index.html` (homepage)
-- `/blog/index.html` (blog hub)
-- All blog article templates (11 existing + future)
+**Files Updated:**
+- ✅ `/index.html` (homepage)
+- ✅ `/blog/index.html` (blog hub)
+- ✅ `/autor/rostislav-sikora/index.html` (author page)
+- ✅ All 12 blog article templates
+
+**Deployed:** Commit 292f0db - November 22, 2025
 
 **Expected Outcome:** AI referral tracking separated from organic traffic
 
 **Validation:**
-- [ ] Clarity dashboard showing data
+- [ ] Clarity dashboard showing data (wait 24-48 hours)
 - [ ] AI referrals tracked separately
-- [ ] Custom events firing correctly
+- [ ] Custom events firing correctly (after Action 3.3)
 - [ ] Heatmaps and recordings available
 
 ---
@@ -857,15 +862,30 @@ document.querySelector('form').addEventListener('submit', () => {
 
 ---
 
-## Next Immediate Actions (Today)
+## Next Immediate Actions
 
-1. **🔥 Register Bing Webmaster Tools** (30 minutes)
-2. **🔥 Register Microsoft Clarity** (30 minutes)
-3. **📝 Assign owners to Phase 1 actions** (15 minutes)
-4. **📊 Document baseline metrics** (1 hour)
-5. **👥 Schedule Week 4 review meeting** (5 minutes)
+### ✅ Completed Today (November 22, 2025)
+1. ✅ Register Bing Webmaster Tools (30 minutes)
+2. ✅ Register Microsoft Clarity (30 minutes)
+3. ✅ Implement Clarity tracking on all pages (1 hour)
 
-**Total time to start:** ~2.5 hours
+### 🔥 Priority Next Steps (Week 1)
+1. **📊 Document baseline metrics** (1 hour) - Action 1.4
+   - Record current traffic data
+   - Test 5 AI search queries manually
+   - Create /metrics/baseline-november-2025.md
+2. **📝 Add structured comparison tables** (2-3 hours) - Action 1.3
+   - Update 3 comparison articles
+   - Add schema markup
+   - Test mobile rendering
+3. **👥 Schedule Week 4 review meeting** (5 minutes)
+   - Set calendar for December 20, 2025
+   - Invite team members
+4. **⏰ Wait for tracking data** (24-48 hours)
+   - Check Bing Webmaster Tools dashboard
+   - Verify Clarity recording sessions
+
+**Estimated time remaining:** ~4 hours
 
 ---
 
