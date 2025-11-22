@@ -119,7 +119,13 @@ Vytvořte následující soubory:
 - `icon-*.png` (72x72 až 512x512 pro PWA)
 
 ### 4. Analytics
-Přidejte Google Analytics nebo jiný tracking kód do `<head>` sekce.
+Tracking kódy jsou spravovány automaticky skriptem `npm run inject:tracking` (součást `npm run build`).
+
+1. Upravte `scripts/tracking-config.json` – doplňte `clarityProjectId` a/nebo `googleTagId`.
+2. Volitelné: nastavte proměnné prostředí `CLARITY_PROJECT_ID` a `GA_MEASUREMENT_ID`, které mají přednost před hodnotami v souboru.
+3. Spusťte `npm run inject:tracking` (nebo celý build) a skript vloží/aktualizuje Clarity i GA snippet v každém `.html` souboru.
+
+Skript je idempotentní a udržuje jasné komentáře kolem vložených bloků, takže manuální úpravy mimo tyto bloky zůstávají zachovány.
 
 ## 🔧 Formulář
 
