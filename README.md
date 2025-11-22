@@ -125,6 +125,8 @@ Tracking kódy jsou spravovány automaticky skriptem `npm run inject:tracking` (
 2. Volitelné: nastavte proměnné prostředí `CLARITY_PROJECT_ID` a `GA_MEASUREMENT_ID`, které mají přednost před hodnotami v souboru.
 3. Spusťte `npm run inject:tracking` (nebo celý build) a skript vloží/aktualizuje Clarity i GA snippet v každém `.html` souboru.
 
+Skript zároveň přidává helper pro Clarity custom events (`form_submit`, `phone_click`, `faq_interaction`, `scroll_25/50/75/90`). Události se spouštějí automaticky (formulář, tel: odkazy, FAQ akordeony, scroll) a jsou viditelné v Clarity > Recordings/Events.
+
 Skript je idempotentní a udržuje jasné komentáře kolem vložených bloků, takže manuální úpravy mimo tyto bloky zůstávají zachovány.
 
 ## 🔧 Formulář

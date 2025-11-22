@@ -63,10 +63,10 @@
 3. Get tracking code (Project ID: ua2ebm7dg9) ✅
 4. Add tracking code to all pages (before `</body>` tag) ✅
 5. Configure custom events:
-   - Form submissions (`clarity("event", "form_submit")`) ⏳ Next
-   - Phone clicks (`clarity("event", "phone_click")`) ⏳ Next
-   - FAQ clicks (`clarity("event", "faq_interaction")`) ⏳ Next
-   - Scroll depth (25%, 50%, 75%, 90%) ⏳ Next
+  - Form submissions (`clarity("event", "form_submit")`) ✅ Automated via `scripts/inject-tracking.js`
+  - Phone clicks (`clarity("event", "phone_click")`) ✅ Automated via `scripts/inject-tracking.js`
+  - FAQ clicks (`clarity("event", "faq_interaction")`) ✅ Automated via `scripts/inject-tracking.js`
+  - Scroll depth (25%, 50%, 75%, 90%) ✅ Automated via `scripts/inject-tracking.js`
 
 **Code Added:**
 ```html
@@ -85,6 +85,8 @@
 - ✅ `/blog/index.html` (blog hub)
 - ✅ `/autor/rostislav-sikora/index.html` (author page)
 - ✅ All 12 blog article templates
+
+**Automation:** `scripts/inject-tracking.js` runs inside `npm run build` to inject Clarity, Google Analytics, and the custom event helper so every HTML page stays consistent without manual edits.
 
 **Deployed:** Commit 292f0db - November 22, 2025
 
