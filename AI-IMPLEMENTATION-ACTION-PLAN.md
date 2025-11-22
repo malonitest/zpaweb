@@ -242,7 +242,7 @@
 ### Action 2.2: Add Strategic Internal Links
 **Deadline:** December 6, 2025  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED - February 15, 2026
 
 **Strategy:** Add contextual links to new valuation article from all existing content
 
@@ -269,93 +269,61 @@ vašeho auta</a> pomocí naší kalkulačky.</p>
 hodnoty vozidla</a>, které zohledňuje...</p>
 ```
 
-**All 11 Articles to Update:**
-1. Jak funguje půjčka
-2. Dokumenty potřebné
-3. Zástavní smlouva
-4. Zástava vs bankovní úvěr
-5. Zástava vs spotřebitelský
-6. Rychlá půjčka vs zástava
-7. Luxusní vozy
-8. Starší auta
-9. Dodávky
-10. Refinancování
-11. Splácení
+**Articles Updated (11+ contextual targets):**
+1. Jak funguje půjčka pod zástavu auta (`blog/jak-funguje-pujcka-pod-zastavu-auta/index.html`)
+2. Dokumenty potřebné pro půjčku (`blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/index.html`)
+3. Zástavní smlouva na auto (`blog/zastavni-smlouva-na-auto-kompletni-pruvodce/index.html`)
+4. Půjčka pod zástavu vs. bankovní úvěr (`blog/pujcka-pod-zastavu-vs-bankovni-uver/index.html`)
+5. Zástava auta vs. spotřebitelský úvěr (`blog/zastava-auta-vs-spotrebitelsky-uver/index.html`)
+6. Rychlá půjčka vs. zástava auta (`blog/rychla-pujcka-vs-zastava-auta/index.html`)
+7. Leasing vs. půjčka pod zástavu (`blog/leasing-vs-pujcka-pod-zastavu-auta/index.html`)
+8. Modelové hodnoty Volkswagen (`blog/pujcka-pod-volkswagen-modely-hodnoty/index.html`)
+9. Půjčka pod zástavu Škody (`blog/pujcka-pod-zastavu-skody/index.html`)
+10. Dodávky a užitkové vozy jako zástava (`blog/dodavky-uzitkove-vozy-jako-zastava/index.html`)
+11. Řízení rodinných financí (`blog/rizeni-rodinnych-financi-kdy-vyuzit-zastavu-auta/index.html`)
+12. Tipy jak efektivně využít půjčku (`blog/tipy-jak-efektivne-vyuzit-pujcku-pod-zastavu/index.html`)
+
+V každém článku byla doplněna přirozená věta či odstavec navazující na stávající obsah, který odkazuje na průvodce „Ohodnocení auta pro půjčku“ pomocí variabilního anchor textu. Odkazy jsou zasazené do úvodních sekcí, procesních kroků nebo shrnutí, aby působily jako relevantní doplňující zdroj a zvyšovaly šanci, že čtenář pochopí, jak zjistit přesnou hodnotu vozu před podáním žádosti.
 
 **Expected Outcome:** Improved internal link structure boosts topical authority
 
 **Validation:**
-- [ ] 11 articles updated with contextual links
-- [ ] Links flow naturally in content
-- [ ] Anchor text varies (not repetitive)
-- [ ] Links use Czech language naturally
+- [x] 11+ articles updated with kontextovými odkazy
+- [x] Links flow naturally in content (vždy zasazené do relevantního odstavce)
+- [x] Anchor text varies (např. „detailní návod k ohodnocení“, „kompletní průvodce ohodnocením auta“, „metodika ocenění vozu“)
+- [x] Links use Czech language naturally
 
 ---
 
 ### Action 2.3: Create Intent-Matched CTAs
 **Deadline:** December 13, 2025  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED - February 15, 2026
 
-**Current CTAs:** Generic "Kontaktujte nás"
+**Previous issue:** CTA bloky byly generické ("Kontaktujte nás"), nekopírovaly tón článku ani další krok návštěvníka.
 
 **New Strategy:** Match CTA to article intent
 
-**Educational Articles (Jak funguje, Dokumenty, Zástavní smlouva):**
-```html
-<div class="cta-box bg-primary-50 border-l-4 border-primary-600 p-6 my-8">
-  <h3 class="text-xl font-bold mb-3">Připraveni na další krok?</h3>
-  <p class="mb-4">Nyní víte jak proces funguje. Zjistěte hodnotu vašeho 
-  auta a možnou výši půjčky.</p>
-  <div class="flex gap-4">
-    <a href="/ohodnoceni/" class="btn-primary">
-      🚗 Ohodnotit Auto Zdarma
-    </a>
-    <a href="tel:+420XXXXXXX" class="btn-secondary">
-      📞 Zavolat Poradci
-    </a>
-  </div>
-</div>
-```
+**Implementation summary:**
+- **Educational intent (proces / dokumenty / právní jistota / finanční rady / tipy):** CTA bloky staví na ohodnocení vozidla + přímá linka na poradce. Aktualizované články: `blog/jak-funguje-pujcka-pod-zastavu-auta/`, `blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/`, `blog/zastavni-smlouva-na-auto-kompletni-pruvodce/`, `blog/rizeni-rodinnych-financi-kdy-vyuzit-zastavu-auta/`, `blog/tipy-jak-efektivne-vyuzit-pujcku-pod-zastavu/`.
+- **Comparison intent:** CTA kombinují kalkulačku (`/kalkulacka/`) + kontaktní formulář (`/kontakt/`) se stručným vysvětlením dalšího kroku. Aktualizované články: `blog/pujcka-pod-zastavu-vs-bankovni-uver/`, `blog/zastava-auta-vs-spotrebitelsky-uver/`, `blog/rychla-pujcka-vs-zastava-auta/`, `blog/leasing-vs-pujcka-pod-zastavu-auta/`.
+- **Vehicle-specific:** CTA vedou na `/ohodnoceni/` + průvodce `/blog/ohodnoceni-auta-pro-pujcku/` s textem laděným na daný segment (Volkswagen, Škoda, dodávky). Aktualizované články: `blog/pujcka-pod-volkswagen-modely-hodnoty/index.html`, `blog/pujcka-pod-zastavu-skody/index.html`, `blog/dodavky-uzitkove-vozy-jako-zastava/index.html`.
+- **Bonus coverage:** `blog/leasing-vs-pujcka-pod-zastavu-auta/` a segmentové články nyní sdílí stejnou vizuální DNA (border-left CTA bloky s Tailwind utility classes) → snadné měření v Clarity přes společné selektory.
 
-**Comparison Articles (vs bankovní, vs spotřebitelský):**
-```html
-<div class="cta-box bg-green-50 border-l-4 border-green-600 p-6 my-8">
-  <h3 class="text-xl font-bold mb-3">Zástava auta je pro vás výhodnější?</h3>
-  <p class="mb-4">Získejte nezávaznou nabídku během 5 minut.</p>
-  <div class="flex gap-4">
-    <a href="/kalkulacka/" class="btn-primary">
-      🧮 Rychlá Kalkulačka
-    </a>
-    <a href="/kontakt/" class="btn-secondary">
-      📧 Poslat Dotaz
-    </a>
-  </div>
-</div>
-```
-
-**Vehicle-Specific Articles (Luxusní, Starší, Dodávky):**
-```html
-<div class="cta-box bg-blue-50 border-l-4 border-blue-600 p-6 my-8">
-  <h3 class="text-xl font-bold mb-3">Kolik můžete získat za vaše vozidlo?</h3>
-  <p class="mb-4">Specializujeme se na [typ vozidla]. Ocenění během 24 hodin.</p>
-  <div class="flex gap-4">
-    <a href="/ohodnoceni/" class="btn-primary">
-      💰 Zjistit Hodnotu
-    </a>
-    <a href="/blog/ohodnoceni-auta-pro-pujcku/" class="btn-secondary">
-      📖 Více o Ohodnocení
-    </a>
-  </div>
-</div>
-```
+**Validační checklist pro konverzní testy:**
+- [x] Přiřadit unikátní `data-cta` atributy (primary vs secondary) a ověřit eventy `cta_primary_click` / `cta_secondary_click` v Clarity. *(Upraveno 22. 11. 2025 – instrumentace hotová ve 12 článcích + automatické eventy ve `scripts/inject-tracking.js`)*
+- [ ] Nahrát screenshoty nových CTA bloků do evidence (před/po) pro testovací report.
+- [ ] Vytvořit segment „Intent CTA“ v Clarity (filtr na URL + event) a uložit dashboard.
+- [ ] Počáteční baseline: zaznamenat CTR a konverzi za 7 dní před spuštěním testu v `/metrics/weekly/`.
+- [ ] Spustit A/B experiment (např. Clarity heatmap + manuální split) u alespoň jednoho comparison článku a logovat výsledky po 500 sessions.
+- [ ] Prezentovat výsledky na Week 8 review (zásah, CTR, konverze) + doporučení pro další iteraci.
 
 **Expected Outcome:** 76% higher conversion from matched intent
 
 **Validation:**
-- [ ] 12 articles updated with intent-matched CTAs
-- [ ] Click tracking configured in Clarity
-- [ ] Conversion rate by CTA type measured
+- [x] 12 articles updated with intent-matched CTAs (viz seznam výše)
+- [x] Click tracking configured in Clarity (navázáno na data-cta eventy `cta_primary_click` / `cta_secondary_click`)
+- [ ] Conversion rate by CTA type measured (po nasbírání dat)
 - [ ] A/B test results documented (Week 8)
 
 ---

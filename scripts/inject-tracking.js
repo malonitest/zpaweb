@@ -99,6 +99,17 @@ const clarityEventsSnippet = clarityProjectId
             '                        fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });\n' +
             '                    });\n' +
             '                });\n' +
+            '                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {\n' +
+            '                    ctaLink.addEventListener("click", () => {\n' +
+            '                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";\n' +
+            '                        const label = (ctaLink.textContent || "").trim().substring(0, 120);\n' +
+            '                        fireClarityEvent(`cta_${ctaType}_click`, {\n' +
+            '                            ctaType,\n' +
+            '                            href: ctaLink.getAttribute("href"),\n' +
+            '                            label\n' +
+            '                        });\n' +
+            '                    });\n' +
+            '                });\n' +
             '                document.querySelectorAll("details summary").forEach((summaryEl) => {\n' +
             '                    summaryEl.addEventListener("click", () => {\n' +
             '                        const text = (summaryEl.textContent || "").trim().substring(0, 120);\n' +
