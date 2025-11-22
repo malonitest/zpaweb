@@ -103,9 +103,9 @@
 #### Action 1.3: Add Structured Comparison Tables
 **Deadline:** November 29, 2025  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED - November 22, 2025
 
-**Articles to Update (3):**
+**Articles Updated (3):**
 
 **1. Půjčka Pod Zástavu vs Bankovní Úvěr**
 - File: `/blog/pujcka-pod-zastavu-vs-bankovni-uver/index.html`
@@ -119,7 +119,7 @@
 
 **3. Rychlá Půjčka vs Zástava Auta**
 - File: `/blog/rychla-pujcka-vs-zastava-auta/index.html`
-- Same structure adapted for fast loans
+- Nový článek vytvořen + tabulka dle šablony
 
 **Table Template:**
 ```html
@@ -154,11 +154,11 @@
 </div>
 ```
 
-**Expected Outcome:** AI engines can extract exact comparison data
+**Outcome:** Všechny 3 srovnávací články obsahují strukturované tabulky s `itemscope itemtype="https://schema.org/Table"`, jasně označenými vítězi a konzistentní mobilní stylizací.
 
 **Validation:**
-- [ ] 3 articles updated with tables
-- [ ] Tables render correctly on mobile
+- [x] 3 articles updated with tables
+- [x] Tables render correctly on mobile
 - [ ] Schema markup validates (use Google Rich Results Test)
 - [ ] Data extractable by AI (test with ChatGPT/Perplexity)
 
