@@ -5,199 +5,221 @@ Moderní webová stránka pro společnost AutoZástava24, poskytující rychlé 
 ## 🚀 Hlavní slogan
 **"Jezdíte dál. Peníze máte do 24 hodin."**
 
+> **Pro vývojáře:** Detailní dokumentace architektury, konvencí a workflow je v [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
+
 ## ✨ Funkce
 
-### SEO & Optimalizace
-- ✅ Sémantické HTML5 značky pro lepší indexaci
-- ✅ Meta tagy (description, keywords, author, robots)
-- ✅ Open Graph protokol pro sociální sítě
-- ✅ Twitter Card meta tagy
-- ✅ Schema.org strukturovaná data (FinancialService)
-- ✅ Optimalizace pro AI vyhledávání
-- ✅ Sitemap.xml pro vyhledávače
-- ✅ Robots.txt pro správné indexování
+### SEO & AI Search Optimalizace
+- ✅ 11 Schema.org typů na homepage (FinancialService, Article, FAQPage, HowTo, etc.)
+- ✅ Konverzační optimalizace pro AI vyhledávače (ChatGPT, Perplexity)
+- ✅ E-E-A-T signály (autor profily s certifikacemi)
+- ✅ BlogPosting schema se strukturovaným autorem
+- ✅ Automaticky generovaná sitemap.xml
+- ✅ Open Graph + Twitter Card meta tagy
+- ✅ 13+ SEO-optimalizovaných blog článků (2000+ slov)
+
+### Analytics & Tracking
+- ✅ Google Analytics (G-S2R8P5WZG3)
+- ✅ Microsoft Clarity (ua2ebm7dg9) - heatmapy, session recordings
+- ✅ Automatická injekce tracking kódů (idempotentní)
+- ✅ Custom event tracking (formuláře, telefon, FAQ, scroll depth)
 
 ### PWA (Progressive Web App)
 - ✅ app.webmanifest pro instalaci aplikace
 - ✅ Service Worker pro offline funkcionalitu
 - ✅ Cachování statických zdrojů
-- ✅ Ikony ve všech velikostech
-- ✅ Podpora notifikací (připraveno)
 
-### Design & UX
-- ✅ Moderní design inspirovaný cashndrive.cz
-- ✅ Tailwind CSS pro responzivní layout
-- ✅ Mobilní optimalizace (Mobile-first)
-- ✅ Plynulé animace a přechody
-- ✅ Přístupnost (ARIA labels)
+### Content Features
+- ✅ Blog systém (13+ článků)
+- ✅ Autor profily s bio a credentials
+- ✅ Interaktivní kalkulačky (splátka, hodnota auta, RPSN)
+- ✅ FAQ sekce s plným Schema.org markup
+- ✅ Responzivní design (mobile-first)
+- ✅ Tailwind CSS (kompilovaný + CDN)
 
-### Obsah
-- ✅ Hero sekce s hlavním sloganem
-- ✅ Funkční kontaktní formulář s validací
-- ✅ Sekce výhod (6 hlavních benefit bodů)
-- ✅ Jak to funguje (4 kroky)
-- ✅ FAQ sekce
-- ✅ Kontaktní informace
-- ✅ Footer s odkazy
-
-## 📁 Struktura souborů
+## 📁 Struktura projektu
 
 ```
 zpaweb/
-├── index.html           # Hlavní HTML stránka
-├── app.webmanifest      # PWA manifest
-├── service-worker.js    # Service Worker pro PWA
-├── sitemap.xml         # Sitemap pro vyhledávače
-├── robots.txt          # Robots.txt pro SEO
-└── README.md           # Tento soubor
+├── index.html              # Homepage (2000+ lines, 11 schema typů)
+├── blog/                   # 13+ článků o půjčkách pod zástavu
+│   ├── index.html         # Blog hub
+│   └── [slug]/index.html  # Jednotlivé články
+├── autor/                  # Autor profily (E-E-A-T)
+│   └── rostislav-sikora/
+├── scripts/                # Build & tracking skripty
+│   ├── inject-tracking.js      # Auto-inject analytics
+│   ├── generate-sitemap.js     # Auto-generate sitemap
+│   ├── calculators.js          # Loan kalkulačky
+│   └── tracking-config.json    # Analytics konfigurace
+├── styles.css             # Kompilovaný Tailwind (homepage)
+├── src/input.css          # Tailwind source
+├── sitemap.xml            # Auto-generated (19+ URLs)
+└── service-worker.js      # PWA offline support
 ```
 
 ## 🛠️ Technologie
 
-- **HTML5** - Sémantická struktura
-- **Tailwind CSS** - Moderní CSS framework (CDN)
-- **Vanilla JavaScript** - Bez závislostí
-- **PWA** - Progressive Web App
-- **Schema.org** - Strukturovaná data
+- **HTML5** - Sémantická struktura, 100% statické
+- **Tailwind CSS 4.x** - Kompilovaný (homepage) + CDN (blog)
+- **Vanilla JavaScript** - Kalkulačky, tracking events
+- **Schema.org** - 11 typů structured data
+- **Azure Static Web Apps** - Auto-deploy na push to main
+- **Node.js scripts** - Build automation
 
-## 🚀 Nasazení
+## 🚀 Quick Start
 
-### Statický hosting (doporučeno)
-
-Stránka je 100% statická a lze ji nasadit na libovolný statický hosting:
-
-#### Netlify
+### Development
 ```bash
-# Nainstalujte Netlify CLI
-npm install -g netlify-cli
+# Install dependencies
+npm install
 
-# Deploy
-netlify deploy --prod
+# Watch Tailwind changes (optional - only for homepage)
+npm run watch:css
+
+# Full build (CSS + tracking + sitemap)
+npm run build
 ```
 
-#### Vercel
-```bash
-# Nainstalujte Vercel CLI
-npm install -g vercel
+### Deployment
+Stránka se **automaticky** nasazuje na Azure Static Web Apps při každém push na `main`:
 
-# Deploy
-vercel --prod
+```bash
+npm run build           # Compile CSS, inject tracking, update sitemap
+git add .
+git commit -m "Update content"
+git push origin main    # Triggers Azure deployment
 ```
 
-#### GitHub Pages
-1. Push do GitHub repository
-2. Aktivujte GitHub Pages v nastavení
-3. Vyberte main branch jako source
+**Azure Static Web Apps workflow:** `.github/workflows/azure-static-web-apps-*.yml`
 
-#### Cloudflare Pages
-1. Připojte GitHub repository
-2. Nastavte build command: (none)
-3. Output directory: /
-
-### Klasický web hosting
-Nahrajte všechny soubory do kořenového adresáře webu pomocí FTP nebo cPanel.
+### Build Commands
+```bash
+npm run build:css          # Compile Tailwind → styles.css
+npm run inject:tracking    # Inject GA + Clarity (idempotent)
+npm run generate:sitemap   # Auto-discover pages → sitemap.xml
+npm run build              # All above in sequence
+```
 
 ## 📝 Konfigurace
 
-### 1. Doména
-Upravte všechny instance `https://www.autozastava24.cz` na vaši skutečnou doménu v:
-- `index.html` (Open Graph, Schema.org, canonical URL)
-- `sitemap.xml` (všechny URL)
-- `robots.txt` (sitemap URL)
+### Analytics Setup
+Edit `scripts/tracking-config.json`:
+```json
+{
+  "clarityProjectId": "ua2ebm7dg9",
+  "googleTagId": "G-S2R8P5WZG3"
+}
+```
 
-### 2. Kontaktní informace
-Aktualizujte v `index.html`:
-- Telefonní číslo
-- Email
-- Adresa
+Tracking je **automaticky injektován** do všech HTML souborů pomocí `npm run inject:tracking`. Skript:
+- ✅ Je idempotentní (safe to run multiple times)
+- ✅ Přidává custom events: `form_submit`, `phone_click`, `faq_interaction`, `scroll_depth`
+- ✅ Používá `<!-- Tracking: ... (auto) -->` markery - **neupravujte manuálně**
 
-### 3. Ikony a obrázky
+### Domain & Contact Info
+Při změně domény aktualizujte:
+- `index.html` - Open Graph, Schema.org, canonical URL
+- `scripts/generate-sitemap.js` - BASE_URL
+- `robots.txt` - sitemap URL
+
+### Images
 Vytvořte následující soubory:
 - `favicon.png` (32x32)
 - `apple-touch-icon.png` (180x180)
 - `og-image.jpg` (1200x630 pro social media)
 - `icon-*.png` (72x72 až 512x512 pro PWA)
 
-### 4. Analytics
-Tracking kódy jsou spravovány automaticky skriptem `npm run inject:tracking` (součást `npm run build`).
+## 📝 Content Management
 
-1. Upravte `scripts/tracking-config.json` – doplňte `clarityProjectId` a/nebo `googleTagId`.
-2. Volitelné: nastavte proměnné prostředí `CLARITY_PROJECT_ID` a `GA_MEASUREMENT_ID`, které mají přednost před hodnotami v souboru.
-3. Spusťte `npm run inject:tracking` (nebo celý build) a skript vloží/aktualizuje Clarity i GA snippet v každém `.html` souboru.
+### Adding Blog Articles
+1. Create `/blog/article-slug/index.html`
+2. Copy structure from existing article (e.g., `jak-funguje-pujcka-pod-zastavu-auta/`)
+3. Include required schemas: **BlogPosting** + **BreadcrumbList** + **FAQPage**
+4. Add author attribution (Rostislav Sikora nebo Martin Pražák)
+5. Run `npm run generate:sitemap` to auto-discover
+6. Update `blog/index.html` with article card
 
-Skript zároveň přidává helper pro Clarity custom events (`form_submit`, `phone_click`, `faq_interaction`, `scroll_25/50/75/90`). Události se spouštějí automaticky (formulář, tel: odkazy, FAQ akordeony, scroll) a jsou viditelné v Clarity > Recordings/Events.
+**Required elements:**
+- Meta tags (description 140-160 chars, keywords, author, robots, canonical)
+- Open Graph + Twitter Card
+- H1 (one only) → H2 sections → H3 subsections
+- Table of contents with anchor links
+- FAQ section (minimum 5 questions)
+- Related articles (3-4 links)
+- CTA button back to main site
 
-Skript je idempotentní a udržuje jasné komentáře kolem vložených bloků, takže manuální úpravy mimo tyto bloky zůstávají zachovány.
-
-## 🔧 Formulář
-
-Formulář je připraven pro integraci s backend API. Pro funkční zpracování:
-
-1. Vytvořte backend API endpoint
-2. Upravte `fetch()` volání v JavaScript sekci
-3. Nebo použijte služby jako:
-   - Formspree
-   - Basin
-   - Netlify Forms
-   - Google Forms API
-
-Příklad integrace s Netlify Forms:
+### Calculators
+Use declarative data-* attributes:
 ```html
-<form name="leadForm" method="POST" data-netlify="true">
-  <!-- form fields -->
-</form>
+<div data-calculator="payment">
+  <input data-field="loanAmount">
+  <input data-field="loanTerm">
+  <span data-result="paymentMonthly"></span>
+</div>
 ```
+Available: `payment`, `value`, `rpsn` (see `scripts/calculators.js`)
 
-## 🎨 Přizpůsobení
+## 🎨 Styling
 
-### Barvy
-Upravte v `tailwind.config`:
+### Tailwind Configuration
 ```javascript
+// tailwind.config.js
 colors: {
-    primary: '#1e40af',    // Hlavní modrá
-    secondary: '#3b82f6',  // Světlejší modrá
+  primary: '#1e40af',    // blue-800
+  secondary: '#3b82f6',  // blue-500
 }
 ```
 
-### Obsah
-- Texty jsou v češtině
-- Logo SVG lze nahradit vlastním
-- Všechny sekce jsou snadno upravitelné
+**Important:**
+- Homepage uses **compiled** `styles.css` (run `npm run build:css` after changes)
+- Blog pages use **Tailwind CDN** (no build needed)
+- Mobile-first: Test at 375px minimum width
 
-## ✅ SEO Checklist
+## ✅ SEO & AI Search Optimization
 
-- [x] Sémantické HTML5 značky
-- [x] Meta description a keywords
-- [x] Open Graph tags
-- [x] Schema.org strukturovaná data
-- [x] Sitemap.xml
-- [x] Robots.txt
-- [x] Responzivní design
-- [x] Rychlé načítání
-- [x] Přístupnost (Alt texty, ARIA)
-- [x] HTTPS ready
-- [x] PWA funkce
+### Implemented
+- [x] **11 Schema.org types** na homepage (FinancialService, Article, FAQPage, HowTo, BreadcrumbList, etc.)
+- [x] **E-E-A-T signals** - autor profily s credentials (25 let zkušeností)
+- [x] **Conversational optimization** - titles/descriptions pro voice search
+- [x] **BlogPosting schema** - všechny články s author attribution
+- [x] **Auto-generated sitemap** (19+ URLs, auto-discovers new content)
+- [x] **Structured Q&A** - každý článek má FAQPage schema
+- [x] **Internal linking** - 3-5 links per article
+- [x] **Word count** - články 1000-2500+ slov
+- [x] **Mobile-responsive** - mobile-first design
+- [x] **Fast loading** - compiled CSS, optimized assets
 
-## 📱 PWA Instalace
+### Critical for AI Search Rankings
+1. **Conversational titles:** "Potřebujete rychle peníze? Půjčka pod zástavu auta..."
+2. **Natural language FAQs:** Answers in full sentences (50-200 words)
+3. **Author credentials:** Always attribute to Rostislav Sikora (garant, 25 let v bankovnictví)
+4. **Structured data:** BlogPosting + BreadcrumbList + FAQPage minimum
 
-Uživatelé mohou nainstalovat web jako aplikaci:
-- **Android**: Chrome nabídne "Přidat na plochu"
-- **iOS**: Safari > Sdílet > Přidat na plochu
-- **Desktop**: Chrome > Menu > Nainstalovat AutoZástava24
+## 🔍 Testing & Validation
 
-## 🔍 Testování
+### Schema Validation
+```bash
+# Test structured data
+curl https://www.autozastava24.cz/ | grep 'application/ld+json'
+```
 
-### Validace
-- HTML: https://validator.w3.org/
+**Tools:**
 - Schema.org: https://validator.schema.org/
+- Google Rich Results: https://search.google.com/test/rich-results
 - Open Graph: https://www.opengraph.xyz/
-- PWA: Chrome DevTools > Lighthouse
 
-### SEO nástroje
-- Google Search Console
+### Performance
 - Google PageSpeed Insights
-- GTmetrix
-- SEMrush
+- Chrome DevTools > Lighthouse
+- webhint: `npx hint https://www.autozastava24.cz`
+
+## 📚 Documentation
+
+- **Developer Guide:** [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
+- **Scripts README:** [`scripts/README.md`](scripts/README.md)
+- **SEO Strategy:** `SEO-AI-SEARCH-STRATEGY.md`
+- **Implementation Summary:** `IMPLEMENTATION-SUMMARY.md`
 
 ### Mobilní test
 - Google Mobile-Friendly Test
