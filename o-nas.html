@@ -83,6 +83,7 @@
         .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
         .value-card { transition: transform 0.3s ease; }
         .value-card:hover { transform: translateY(-5px); }
+        .step-connector { transform: translateX(50%); width: calc(100% - 40px); }
     </style>
 <!-- Tracking: Google Analytics (auto) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2R8P5WZG3"></script>
@@ -215,7 +216,7 @@
                         <div class="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center mx-auto">
                             <span class="text-3xl font-bold text-white">1</span>
                         </div>
-                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block" style="transform: translateX(50%); width: calc(100% - 40px);"></div>
+                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block step-connector"></div>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Vyplníte formulář</h3>
                     <p class="text-gray-600">Jednoduchá online žádost – trvá 5 minut. Uvedete základní údaje o vozidle.</p>
@@ -227,7 +228,7 @@
                         <div class="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center mx-auto">
                             <span class="text-3xl font-bold text-white">2</span>
                         </div>
-                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block" style="transform: translateX(50%); width: calc(100% - 40px);"></div>
+                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block step-connector"></div>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Ohodnocení vozidla</h3>
                     <p class="text-gray-600">Naši odborníci provedou rychlé a férové ocenění podle aktuální tržní hodnoty.</p>
@@ -239,7 +240,7 @@
                         <div class="w-20 h-20 bg-blue-800 rounded-full flex items-center justify-center mx-auto">
                             <span class="text-3xl font-bold text-white">3</span>
                         </div>
-                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block" style="transform: translateX(50%); width: calc(100% - 40px);"></div>
+                        <div class="absolute top-10 left-1/2 w-full h-0.5 bg-blue-200 hidden md:block step-connector"></div>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Podpis smlouvy</h3>
                     <p class="text-gray-600">Transparentní smlouva o výkupu a zpětném pronájmu. Vše jasně vysvětlíme.</p>
@@ -284,7 +285,7 @@
                             <h3 class="text-2xl font-bold mb-2">Rostislav Sikora</h3>
                             <p class="text-blue-100 text-lg">Garant projektu AutoZástava24</p>
                             <div class="mt-6">
-                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="inline-block bg-white text-blue-800 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">
+                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-blue-800 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">
                                     <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                     </svg>
@@ -606,7 +607,7 @@
                         <li>info@autozastava24.cz</li>
                         <li>Praha, Česká republika</li>
                         <li class="pt-2">
-                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition">
                                 LinkedIn: Rostislav Sikora
                             </a>
                         </li>
@@ -653,6 +654,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

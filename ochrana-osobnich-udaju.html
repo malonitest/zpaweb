@@ -266,7 +266,7 @@
                         <strong>Úřad pro ochranu osobních údajů</strong><br>
                         Pplk. Sochora 27, 170 00 Praha 7<br>
                         Tel.: +420 234 665 111<br>
-                        Web: <a href="https://www.uoou.cz" class="text-blue-800 underline" target="_blank">www.uoou.cz</a>
+                        Web: <a href="https://www.uoou.cz" class="text-blue-800 underline" target="_blank" rel="noopener noreferrer">www.uoou.cz</a>
                     </p>
 
                     <h3>5.8 Jak uplatnit svá práva</h3>
@@ -495,6 +495,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

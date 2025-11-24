@@ -117,4 +117,4 @@ Allow: /*.ico$
 Allow: /*.woff$
 Allow: /*.woff2$
 Allow: /*.ttf$
-Allow: /manifest.json
+Allow: /app.webmanifest

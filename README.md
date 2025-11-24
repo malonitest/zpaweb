@@ -18,7 +18,7 @@ Moderní webová stránka pro společnost AutoZástava24, poskytující rychlé 
 - ✅ Robots.txt pro správné indexování
 
 ### PWA (Progressive Web App)
-- ✅ Manifest.json pro instalaci aplikace
+- ✅ app.webmanifest pro instalaci aplikace
 - ✅ Service Worker pro offline funkcionalitu
 - ✅ Cachování statických zdrojů
 - ✅ Ikony ve všech velikostech
@@ -45,7 +45,7 @@ Moderní webová stránka pro společnost AutoZástava24, poskytující rychlé 
 ```
 zpaweb/
 ├── index.html           # Hlavní HTML stránka
-├── manifest.json        # PWA manifest
+├── app.webmanifest      # PWA manifest
 ├── service-worker.js    # Service Worker pro PWA
 ├── sitemap.xml         # Sitemap pro vyhledávače
 ├── robots.txt          # Robots.txt pro SEO

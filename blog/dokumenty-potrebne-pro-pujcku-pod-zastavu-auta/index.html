@@ -174,6 +174,25 @@
         ]
     }
     </script>
+    
+    <!-- Answer Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "QAPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Jaké dokumenty potřebuji, aby byla půjčka pod zástavu auta schválená do 24 hodin?",
+                "answerCount": 1,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Základ tvoří platný občanský průkaz a originál velkého technického průkazu, kde jste uvedeni jako vlastník. Připravte čerstvé fotografie vozidla (exteriér, interiér, VIN, stav km) a případné servisní doklady – ty umí navýšit hodnotu o 10–15 %. Naopak nepotřebujete potvrzení o příjmu ani ručitele; elektronicky zaslané skeny stačí k tomu, aby AutoZástava24 žádost předběžně schválila ještě ten den."
+                }
+            }
+        ]
+    }
+    </script>
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -786,7 +805,7 @@
                                 <span>📧 info@autozastava24.cz</span>
                                 <span>💼 25+ let zkušeností</span>
                                 <span>💰 Miliardy Kč v projektech</span>
-                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="text-blue-800 hover:underline">
+                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">
                                     🔗 LinkedIn profil
                                 </a>
                             </div>
@@ -902,6 +921,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

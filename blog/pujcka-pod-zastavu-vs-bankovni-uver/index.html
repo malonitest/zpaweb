@@ -163,6 +163,43 @@
         ]
     }
     </script>
+    
+    <!-- WebApplication Schema - RPSN kalkulačka -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Kalkulačka RPSN AutoZástava24",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.autozastava24.cz/blog/pujcka-pod-zastavu-vs-bankovni-uver/#rpsn-kalkulacka",
+        "description": "Porovnání skutečných nákladů - spočítejte měsíční splátku, celkovou cenu a RPSN včetně poplatků pro půjčku pod zástavu auta.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CZK"
+        }
+    }
+    </script>
+    
+    <!-- Answer Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "QAPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Kdy dává větší smysl půjčka pod zástavu auta než bankovní úvěr?",
+                "answerCount": 1,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zástava auta vítězí ve chvíli, kdy potřebujete peníze do 24–48 hodin, nechcete dokládat příjmy nebo máte složitou úvěrovou historii. AutoZástava24 řeší žádost na základě hodnoty vozidla, takže stačí technický průkaz a fotodokumentace – peníze odcházejí do dvou dnů a auto zůstává u vás. Bankovní úvěr sice nabízí nižší nominální úrok, ale přidává týden ověřování, poplatky a povinné pojištění; reálné náklady se tím často srovnají, zatímco flexibilita a rychlost jsou na straně zástavy."
+                }
+            }
+        ]
+    }
+    </script>
 
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
@@ -970,6 +1007,70 @@
                     <li><strong>Zvažte hybridní řešení</strong> - kombinace může být optimální kompromis</li>
                 </ol>
 
+                <section id="rpsn-kalkulacka" class="my-16">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-10">
+                        <div class="md:flex md:items-center md:justify-between mb-8">
+                            <div class="max-w-2xl">
+                                <p class="text-sm font-semibold uppercase tracking-widest text-blue-700 mb-2">Interaktivní nástroj</p>
+                                <h2 class="text-3xl font-bold text-gray-900 mb-3">RPSN kalkulačka: Bankovní úvěr vs. zástava auta</h2>
+                                <p class="text-gray-600">Zadejte reálné parametry své nabídky a zjistěte skutečnou cenu peněz. Kalkulačka přepočítá měsíční splátku, celkové náklady i efektivní RPSN, které zohledňuje poplatky a délku fixace.</p>
+                            </div>
+                            <span class="inline-flex mt-4 md:mt-0 px-4 py-1 text-sm font-semibold text-green-900 bg-green-100 rounded-full">Aktualizováno 02/2025</span>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <form id="rpsnCalculator" class="space-y-5" novalidate>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnAmount">Výše půjčky (Kč)</label>
+                                    <input id="rpsnAmount" name="rpsnAmount" type="number" min="50000" max="600000" step="5000" value="200000" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnTerm">Doba splácení (měsíce)</label>
+                                    <input id="rpsnTerm" name="rpsnTerm" type="number" min="6" max="60" step="6" value="24" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnRate">Úroková sazba p.a.</label>
+                                    <input id="rpsnRate" name="rpsnRate" type="number" min="5" max="35" step="0.1" value="18" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                    <p class="text-xs text-gray-500 mt-1">Pro banku zadejte 7–12 %, pro zástavu auta obvykle 15–22 %.</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnFees">Poplatky (zpracování, vedení)</label>
+                                    <input id="rpsnFees" name="rpsnFees" type="number" min="0" step="500" value="2500" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                    <p class="text-xs text-gray-500 mt-1">Zahrňte jednorázové i měsíční poplatky, ať je srovnání férové.</p>
+                                </div>
+                            </form>
+
+                            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 space-y-5" aria-live="polite">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-500">Měsíční splátka</p>
+                                        <p class="text-xs text-gray-400">Včetně úroku, bez poplatků</p>
+                                    </div>
+                                    <strong id="rpsnMonthly" class="text-2xl font-semibold text-blue-900">–</strong>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-500">Celkové náklady</p>
+                                        <p class="text-xs text-gray-400">Splátky + poplatky</p>
+                                    </div>
+                                    <strong id="rpsnTotal" class="text-2xl font-semibold text-blue-900">–</strong>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-500">Efektivní RPSN</p>
+                                        <p class="text-xs text-gray-400">Porovnává banku vs. zástavu</p>
+                                    </div>
+                                    <strong id="rpsnApr" class="text-2xl font-semibold text-blue-900">–</strong>
+                                </div>
+                                <div class="p-4 bg-white rounded-xl border border-dashed border-gray-200 text-sm text-gray-600">
+                                    <p class="font-semibold text-gray-900 mb-1">Tip odborníka</p>
+                                    <p>Pokud rozdíl RPSN nepřekročí 4–5 p.b., vyplatí se sledovat i rychlost vyplacení a požadavky na dokumenty – právě tam zástava auta dohání banky.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <div class="bg-green-50 border-l-4 border-green-600 rounded-2xl p-8 my-10 shadow-sm">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Chcete si porovnat obě varianty na číslech?</h3>
                     <p class="text-gray-700 mb-6">
@@ -1002,7 +1103,7 @@
                             <span>📧 info@autozastava24.cz</span>
                             <span>💼 25+ let zkušeností</span>
                             <span>🏦 Expert na bankovnictví i fintech</span>
-                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="text-blue-800 hover:underline">
+                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">
                                 🔗 LinkedIn profil
                             </a>
                         </div>
@@ -1082,6 +1183,8 @@
         </div>
     </footer>
 
+    <script src="/scripts/calculators.js" defer></script>
+
     <!-- Tracking: Microsoft Clarity (auto) -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -1115,6 +1218,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

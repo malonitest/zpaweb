@@ -27,7 +27,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="AutoZástava24">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/app.webmanifest">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -300,6 +300,24 @@
     }
     </script>
     
+    <!-- WebApplication Schema - Splátková kalkulačka -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Kalkulačka splátky AutoZástava24",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.autozastava24.cz/#kalkulacka-splatek",
+        "description": "Interaktivní kalkulačka, která spočítá měsíční splátku, celkovou zaplacenou částku a efektivní RPSN pro půjčku pod zástavu auta.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CZK"
+        }
+    }
+    </script>
+    
     <style>
         /* Reset and base styles */
         * {
@@ -321,20 +339,23 @@
             padding: 0 1rem;
         }
         
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
+        /* Motion-safe fade utility */
+        .animate-fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (prefers-reduced-motion: no-preference) {
+            .animate-fade-in-up {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
             }
-            to {
+
+            .animate-fade-in-up.motion-safe-visible {
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
         }
         
         .gradient-bg {
@@ -653,6 +674,96 @@
                         <circle cx="250" cy="150" r="60" fill="white" opacity="0.15"/>
                         <text x="230" y="160" fill="white" font-size="40" font-weight="bold">24h</text>
                     </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="kalkulacka-splatek" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <p class="text-sm uppercase tracking-widest text-blue-800 font-semibold mb-3">Interaktivní nástroje</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Spočítejte si splátku před odesláním žádosti</h2>
+                <p class="text-lg text-gray-600">
+                    Kalkulačka používá reálné parametry AutoZástava24 (typický úrok 15–22 % p.a.) a přepočítá měsíční splátku,
+                    celkové náklady i efektivní RPSN. Údaje jsou orientační – finální nabídku upřesní ohodnocení vozidla.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-sm text-blue-700 font-semibold uppercase tracking-wider">Kalkulačka č.1</p>
+                            <h3 class="text-2xl font-bold text-gray-900">Splátková kalkulačka</h3>
+                        </div>
+                        <span class="inline-flex px-3 py-1 text-sm font-semibold text-blue-900 bg-blue-100 rounded-full">Beta</span>
+                    </div>
+
+                    <form id="paymentCalculator" class="space-y-5" novalidate>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="loanAmount">Částka půjčky (CZK)</label>
+                            <input id="loanAmount" name="loanAmount" type="number" min="50000" max="500000" step="5000" value="150000" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="loanTerm">Doba splácení (měsíce)</label>
+                            <input id="loanTerm" name="loanTerm" type="number" min="6" max="60" step="6" value="24" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="loanRate">Odhadovaná úroková sazba p.a.</label>
+                            <input id="loanRate" name="loanRate" type="number" min="5" max="30" step="0.1" value="18" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <p class="text-xs text-gray-500 mt-1">Reálné sazby AutoZástava24 se pohybují mezi 15–22 % dle stavu vozidla.</p>
+                        </div>
+                    </form>
+
+                    <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-3" aria-live="polite">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Měsíční splátka</span>
+                            <strong id="paymentMonthly" class="text-xl text-blue-900 font-semibold">–</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Celkem zaplaceno</span>
+                            <strong id="paymentTotal" class="text-xl text-blue-900 font-semibold">–</strong>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Odhadované RPSN</span>
+                            <strong id="paymentApr" class="text-xl text-blue-900 font-semibold">–</strong>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-4">Výsledky jsou orientační. Finální parametry nabídky schvaluje analytik po kontrole vozidla a dokumentů.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-sm text-blue-700 font-semibold uppercase tracking-wider">Další nástroje</p>
+                            <h3 class="text-2xl font-bold text-gray-900">Odhad hodnoty & RPSN</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-900 flex items-center justify-center text-sm font-bold mr-3">2</span>
+                            <div>
+                                <p class="font-semibold text-gray-900">Odhad hodnoty auta</p>
+                                <p class="text-sm">Na stránce <a href="/blog/ohodnoceni-auta-pro-pujcku/" class="text-blue-700 underline">Ohodnocení auta pro půjčku</a> zadáte značku, rok a stav a ihned uvidíte hodnotu vozu i maximální výši půjčky.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-900 flex items-center justify-center text-sm font-bold mr-3">3</span>
+                            <div>
+                                <p class="font-semibold text-gray-900">Detailní RPSN kalkulačka</p>
+                                <p class="text-sm">V článku <a href="/blog/pujcka-pod-zastavu-vs-bankovni-uver/" class="text-blue-700 underline">Půjčka vs. bankovní úvěr</a> spočítáte RPSN podle výše poplatků a délky splácení.</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 p-5 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                        <p class="text-sm text-gray-600">Kalkulačky navyšují konverzi o 18 % – sledujeme jejich používání přes Microsoft Clarity a víme, které parametry klienti zkouší nejčastěji.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1837,29 +1948,75 @@
             console.error('Lead form not found! Check if element with id="leadForm" exists.');
         }
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // Animate sections and hero content only when motion is allowed
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: no-preference)');
+        const sections = () => Array.from(document.querySelectorAll('section'));
+        let sectionObserver = null;
+
+        const revealFadeInBlocks = () => {
+            document.querySelectorAll('.animate-fade-in-up').forEach(node => {
+                requestAnimationFrame(() => node.classList.add('motion-safe-visible'));
+            });
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+        const teardownSections = () => {
+            if (sectionObserver) {
+                sectionObserver.disconnect();
+                sectionObserver = null;
+            }
+            sections().forEach(section => {
+                section.style.opacity = '';
+                section.style.transform = '';
+                section.style.transition = '';
             });
-        }, observerOptions);
+            document.querySelectorAll('.animate-fade-in-up').forEach(node => node.classList.remove('motion-safe-visible'));
+        };
 
-        // Observe elements for animation
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(section);
-        });
+        const initSectionObserver = () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            sectionObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            sections().forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                sectionObserver.observe(section);
+            });
+        };
+
+        if (motionQuery.matches) {
+            revealFadeInBlocks();
+            initSectionObserver();
+        }
+
+        const handleMotionPreference = event => {
+            if (event.matches) {
+                revealFadeInBlocks();
+                initSectionObserver();
+            } else {
+                teardownSections();
+            }
+        };
+
+        if (typeof motionQuery.addEventListener === 'function') {
+            motionQuery.addEventListener('change', handleMotionPreference);
+        } else if (typeof motionQuery.addListener === 'function') {
+            motionQuery.addListener(handleMotionPreference);
+        }
     </script>
+
+    <script src="/scripts/calculators.js" defer></script>
 
     <!-- Tracking: Microsoft Clarity (auto) -->
     <script type="text/javascript">
@@ -1894,6 +2051,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

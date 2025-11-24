@@ -996,7 +996,7 @@ Poplatek vyřízení:     1 600 Kč
                             <span>📧 info@autozastava24.cz</span>
                             <span>💼 25+ let zkušeností</span>
                             <span>🏦 Expert na úvěrové produkty</span>
-                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="text-blue-800 hover:underline">
+                            <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">
                                 🔗 LinkedIn profil
                             </a>
                         </div>
@@ -1109,6 +1109,17 @@ Poplatek vyřízení:     1 600 Kč
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

@@ -166,6 +166,25 @@ avní právo automaticky zaniká. Zástavní věřitel je povinen vymazat zásta
         ]
     }
     </script>
+    
+    <!-- Answer Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "QAPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Co musí obsahovat zástavní smlouva na auto a jak chrání obě strany?",
+                "answerCount": 1,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Platná smlouva podle §1309 OZ vždy uvádí identifikaci zástavce a věřitele (jméno, RČ/IČO), přesný popis vozidla včetně VIN a SPZ, výši zajištěné pohledávky s úrokem a splatností a podmínky užívání auta během zástavy. Po podpisu následuje zápis do Registru zástav Notářské komory, který trvá zhruba 30 minut a dává věřiteli právo auto zpeněžit jen pokud dlužník nesplácí. Klient tak může s vozidlem jezdit dál, ale ví, že pravidla exekuce jsou transparentně popsaná."
+                }
+            }
+        ]
+    }
+    </script>
 
     <!-- Breadcrumb Schema -->
     <script type="application/ld+json">
@@ -935,7 +954,7 @@ avní právo automaticky zaniká. Zástavní věřitel je povinen vymazat zásta
                                 <span>📧 info@autozastava24.cz</span>
                                 <span>💼 25+ let zkušeností</span>
                                 <span>💰 Miliardy Kč v projektech</span>
-                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" class="text-blue-800 hover:underline">
+                                <a href="https://www.linkedin.com/in/rostislav-sikora-4b70aa24/" target="_blank" rel="noopener noreferrer" class="text-blue-800 hover:underline">
                                     🔗 LinkedIn profil
                                 </a>
                             </div>
@@ -1049,6 +1068,17 @@ avní právo automaticky zaniká. Zástavní věřitel je povinen vymazat zásta
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

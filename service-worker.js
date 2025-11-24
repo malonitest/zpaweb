@@ -2,7 +2,7 @@ const CACHE_NAME = 'autozastava24-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/manifest.json',
+  '/app.webmanifest',
   '/favicon.png',
   'https://cdn.tailwindcss.com'
 ];

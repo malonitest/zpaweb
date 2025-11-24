@@ -228,6 +228,43 @@
       ]
     }
     </script>
+    
+        <!-- WebApplication Schema - Hodnota auta -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Kalkulačka hodnoty auta AutoZástava24",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "url": "https://www.autozastava24.cz/blog/ohodnoceni-auta-pro-pujcku/#kalkulacka-hodnoty",
+            "description": "Nástroj pro orientační stanovení hodnoty vozidla a maximální výše půjčky podle značky, roku výroby, nájezdu a stavu.",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "CZK"
+            }
+        }
+        </script>
+    
+        <!-- Answer Schema -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "QAPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Jak AutoZástava24 hodnotí auto a kolik peněz mohu získat?",
+                    "answerCount": 1,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ocenění začíná online kalkulačkou (značka, model, rok, km), pokračuje kontrolou dokumentů a končí osobní prohlídkou karoserie, interiéru, motoru a diagnostiky. Na základě databází prodeje a stavu vozu nabídneme obvykle 50–70 % aktuální tržní hodnoty, prémiové a dobře servisované vozy se dostanou k horní hranici. Finální nabídku posíláme do 24 hodin a je platná 7 dní, takže přesně víte, s jakou částkou můžete počítat před podpisem smlouvy."
+                    }
+                }
+            ]
+        }
+        </script>
 <!-- Tracking: Google Analytics (auto) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2R8P5WZG3"></script>
     <script>
@@ -784,8 +821,66 @@
                 </h2>
 
                 <p class="mb-6">
-                    Pro rychlou orientaci, kolik můžete za své auto získat, můžete použít následující tabulku. Pro přesnější ocenění doporučujeme využít naši <a href="/#kalkulacka" class="text-blue-600 hover:underline">online kalkulačku</a>.
+                    Zadejte parametry svého vozidla a okamžitě uvidíte odhad tržní hodnoty i přibližnou výši půjčky, kterou umíme vyplatit (obvykle 50-70 % hodnoty). Kalkulačka je orientační – finální částku potvrdí náš analytik po osobním ohledání.
                 </p>
+
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 md:p-8 mb-8">
+                    <form id="valueEstimator" class="grid md:grid-cols-2 gap-6" novalidate>
+                        <div class="md:col-span-1">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorBrand">Značka</label>
+                            <select id="estimatorBrand" name="brand" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="skoda" data-label="Škoda">Škoda</option>
+                                <option value="volkswagen" data-label="Volkswagen">Volkswagen</option>
+                                <option value="bmw" data-label="BMW">BMW</option>
+                                <option value="audi" data-label="Audi">Audi</option>
+                                <option value="mercedes" data-label="Mercedes">Mercedes</option>
+                                <option value="toyota" data-label="Toyota">Toyota</option>
+                                <option value="hyundai" data-label="Hyundai">Hyundai</option>
+                                <option value="kia" data-label="Kia">Kia</option>
+                                <option value="ford" data-label="Ford">Ford</option>
+                                <option value="default" data-label="Jiná značka">Jiná značka</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-1">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorModel">Model</label>
+                            <input id="estimatorModel" name="model" type="text" placeholder="např. Octavia III" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorYear">Rok výroby</label>
+                            <input id="estimatorYear" name="year" type="number" min="2005" max="2025" value="2018" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorKm">Najeté kilometry</label>
+                            <input id="estimatorKm" name="kilometers" type="number" step="1000" value="120000" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                        </div>
+
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorCondition">Stav vozidla</label>
+                            <select id="estimatorCondition" name="condition" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                <option value="1.05" data-label="Excelentní">Excelentní (servis + garážování)</option>
+                                <option value="1" data-label="Velmi dobrý" selected>Velmi dobrý (kompletní servis)</option>
+                                <option value="0.9" data-label="Běžné opotřebení">Běžné opotřebení</option>
+                                <option value="0.8" data-label="Vyžaduje investici">Vyžaduje investici (kosmetika)</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <div class="mt-6 grid md:grid-cols-2 gap-6" aria-live="polite">
+                        <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                            <p class="text-sm text-blue-900 font-semibold uppercase tracking-wider">Orientační hodnota</p>
+                            <p id="estimatorValue" class="text-3xl font-bold text-blue-900 mt-2">–</p>
+                            <p class="text-xs text-blue-800 mt-1">Počítáno z tržních dat a korekcí za věk, nájezd a stav.</p>
+                        </div>
+                        <div class="bg-green-50 rounded-xl p-5 border border-green-100">
+                            <p class="text-sm text-green-900 font-semibold uppercase tracking-wider">Možná výše půjčky (65 %)</p>
+                            <p id="estimatorLoan" class="text-3xl font-bold text-green-900 mt-2">–</p>
+                            <p class="text-xs text-green-800 mt-1">Skutečná nabídka se může lišit ±5 % podle dokumentace.</p>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-gray-500 mt-4">Údaje se nikam neodesílají, slouží jen pro orientaci. Jakmile formulář odešlete, analytik výsledky ověří v databázích CEBIA a Eurotax.</p>
+                </div>
 
                 <div class="overflow-x-auto mb-8">
                     <table class="min-w-full bg-white border border-gray-300 rounded-lg overflow-hidden">
@@ -856,7 +951,7 @@
 
                 <div class="space-y-4 mb-8">
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Jak se určuje hodnota auta pro zástavní půjčku?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -865,7 +960,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Kolik procent hodnoty auta mohu získat jako půjčku?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -874,7 +969,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Jaké faktory nejvíce ovlivňují hodnotu auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -883,7 +978,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Potřebuji servisní knihu k ocenění auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -892,7 +987,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Ovlivní poškození auta jeho hodnotu pro půjčku?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -901,7 +996,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Jak dlouho trvá ocenění auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -910,7 +1005,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Mohu nechat auto ocenit online bez osobní návštěvy?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -919,7 +1014,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Jaké dokumenty potřebuji k ocenění auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -928,7 +1023,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Jak zjistím skutečnou tržní hodnotu svého auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -937,7 +1032,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Má barva auta vliv na jeho hodnotu?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -946,7 +1041,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Mohu získat půjčku na auto s vysokým nájezdem?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -955,7 +1050,7 @@
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                        <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <button type="button" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
                             <span class="font-semibold text-gray-900">Ovlivňuje typ převodovky hodnotu auta?</span>
                         </button>
                         <div class="px-6 pb-4 text-gray-700">
@@ -1089,6 +1184,8 @@
         </div>
     </footer>
 
+    <script src="/scripts/calculators.js" defer></script>
+
     <!-- Tracking: Microsoft Clarity (auto) -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -1122,6 +1219,17 @@
                 document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
                     link.addEventListener("click", () => {
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
                     });
                 });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {

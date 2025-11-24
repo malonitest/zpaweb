@@ -989,6 +989,17 @@
                         fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
                     });
                 });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
+                    });
+                });
                 document.querySelectorAll("details summary").forEach((summaryEl) => {
                     summaryEl.addEventListener("click", () => {
                         const text = (summaryEl.textContent || "").trim().substring(0, 120);
