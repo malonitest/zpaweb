@@ -10,13 +10,15 @@ Use this template to capture the "before" snapshot for all KPIs referenced in Ac
 
 | Metric | Value | Source | Notes |
 | --- | --- | --- | --- |
-| Total organic sessions | `TBD` | GA4 | Filter for 18–24 Nov 2025 |
+| Total organic sessions | `3` | Clarity (Channel report) | 3 / 6 sessions tagged as OrganicSearch (Google) |
 | Blog traffic (sessions) | `TBD` | GA4 | Include % of total |
-| Average time on page | `TBD` | GA4 | Sitewide avg |
+| Average time on page | `2.7 min active / 5.7 min total` | Clarity dashboard | Averages from 6 sessions (Active 162s, Total 339s) |
 | Bounce rate | `TBD` | GA4 |  | 
-| Pages per session | `TBD` | GA4 |  |
+| Pages per session | `2` | Clarity dashboard | Bots excluded (2 flagged) |
 | Form submissions | `TBD` | Clarity / CRM | Count w/ source if possible |
 | Phone clicks | `TBD` | Clarity custom event |  |
+
+**Clarity snapshot (22–24 Nov):** 6 sessions (4 unique users, 2 bot sessions excluded), average scroll depth 53.25%, quick back rate 16.67%, `calc_payment_update` fired in 1 session. Top pages: homepage (4 sessions) and blog hub (2 sessions).
 
 ### Screenshot Checklist
 - [ ] GA4 Traffic overview (18–24 Nov)

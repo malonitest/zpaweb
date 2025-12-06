@@ -824,11 +824,11 @@
                     Zadejte parametry svého vozidla a okamžitě uvidíte odhad tržní hodnoty i přibližnou výši půjčky, kterou umíme vyplatit (obvykle 50-70 % hodnoty). Kalkulačka je orientační – finální částku potvrdí náš analytik po osobním ohledání.
                 </p>
 
-                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 md:p-8 mb-8">
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 md:p-8 mb-8" data-calculator="value" data-calculator-id="ohodnoceni-guide">
                     <form id="valueEstimator" class="grid md:grid-cols-2 gap-6" novalidate>
                         <div class="md:col-span-1">
                             <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorBrand">Značka</label>
-                            <select id="estimatorBrand" name="brand" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <select id="estimatorBrand" name="brand" data-field="brand" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                                 <option value="skoda" data-label="Škoda">Škoda</option>
                                 <option value="volkswagen" data-label="Volkswagen">Volkswagen</option>
                                 <option value="bmw" data-label="BMW">BMW</option>
@@ -843,21 +843,21 @@
                         </div>
                         <div class="md:col-span-1">
                             <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorModel">Model</label>
-                            <input id="estimatorModel" name="model" type="text" placeholder="např. Octavia III" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <input id="estimatorModel" name="model" data-field="model" type="text" placeholder="např. Octavia III" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                         </div>
 
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorYear">Rok výroby</label>
-                            <input id="estimatorYear" name="year" type="number" min="2005" max="2025" value="2018" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <input id="estimatorYear" name="year" data-field="year" type="number" min="2005" max="2025" value="2018" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorKm">Najeté kilometry</label>
-                            <input id="estimatorKm" name="kilometers" type="number" step="1000" value="120000" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <input id="estimatorKm" name="kilometers" data-field="kilometers" type="number" step="1000" value="120000" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                         </div>
 
                         <div class="md:col-span-2">
                             <label class="block text-sm font-semibold text-gray-700 mb-2" for="estimatorCondition">Stav vozidla</label>
-                            <select id="estimatorCondition" name="condition" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                            <select id="estimatorCondition" name="condition" data-field="condition" class="w-full border border-gray-200 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                                 <option value="1.05" data-label="Excelentní">Excelentní (servis + garážování)</option>
                                 <option value="1" data-label="Velmi dobrý" selected>Velmi dobrý (kompletní servis)</option>
                                 <option value="0.9" data-label="Běžné opotřebení">Běžné opotřebení</option>
@@ -869,12 +869,12 @@
                     <div class="mt-6 grid md:grid-cols-2 gap-6" aria-live="polite">
                         <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
                             <p class="text-sm text-blue-900 font-semibold uppercase tracking-wider">Orientační hodnota</p>
-                            <p id="estimatorValue" class="text-3xl font-bold text-blue-900 mt-2">–</p>
+                            <p id="estimatorValue" data-result="estimatorValue" class="text-3xl font-bold text-blue-900 mt-2">–</p>
                             <p class="text-xs text-blue-800 mt-1">Počítáno z tržních dat a korekcí za věk, nájezd a stav.</p>
                         </div>
                         <div class="bg-green-50 rounded-xl p-5 border border-green-100">
                             <p class="text-sm text-green-900 font-semibold uppercase tracking-wider">Možná výše půjčky (65 %)</p>
-                            <p id="estimatorLoan" class="text-3xl font-bold text-green-900 mt-2">–</p>
+                            <p id="estimatorLoan" data-result="estimatorLoan" class="text-3xl font-bold text-green-900 mt-2">–</p>
                             <p class="text-xs text-green-800 mt-1">Skutečná nabídka se může lišit ±5 % podle dokumentace.</p>
                         </div>
                     </div>

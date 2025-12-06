@@ -9,7 +9,7 @@
 ## Executive Summary
 
 **Key Insight:** AI traffic converts at **3x the rate** of traditional channels  
-**Current Status:** Strong content foundation (12 articles) but missing AI tracking  
+**Current Status:** Strong content foundation (12 articles), Microsoft Clarity + Bing data live, calculators refactored for multi-instance support (Dec 6), `llms.txt` + `humans.txt` published for AI discoverability  
 **Goal:** Achieve 15% traffic from AI sources with 15-18% conversion rate  
 **Investment:** Tracking setup → Content enhancement → Technical optimization → Regional expansion
 
@@ -25,6 +25,10 @@
 - [x] Microsoft research analyzed (3x conversion opportunity identified)
 - [x] Action 1.1: Bing Webmaster Tools registered (November 22, 2025)
 - [x] Action 1.2: Microsoft Clarity implemented on all pages (Commit 292f0db)
+- [x] `llms.txt` published for AI crawler discoverability (December 6, 2025)
+- [x] `humans.txt` published with team credits (December 6, 2025)
+- [x] Calculator JS refactored for multi-instance support (December 6, 2025)
+- [x] Advanced engagement tracking (scroll, FAQ, CTA, phone) live via inject-tracking.js
 
 ### 🔥 Priority Actions (Week 1)
 
@@ -388,11 +392,11 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 ### Action 3.1: Implement Answer Schema
 **Deadline:** January 10, 2026  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED – November 24, 2025
 
 **Goal:** Help AI engines extract definitive answers
 
-**Target Articles:** Top 5 performing articles (based on Week 6 data)
+**Delivered:** QAPage blocks (incl. conversational copy + Clarity-friendly anchors) published on 5 priority posts – `blog/jak-funguje-pujcka-pod-zastavu-auta/`, `blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/`, `blog/zastavni-smlouva-na-auto-kompletni-pruvodce/`, `blog/ohodnoceni-auta-pro-pujcku/`, `blog/pujcka-pod-zastavu-vs-bankovni-uver/`. Each matches the on-page “answer” blurb to improve extraction consistency.
 
 **Answer Schema Template:**
 ```json
@@ -416,17 +420,20 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 **Expected Outcome:** Featured in AI answer boxes
 
 **Validation:**
-- [ ] 5 articles with Answer schema
-- [ ] Schema validates
+- [x] 5 articles with Answer schema
+- [x] Schema validates
 - [ ] Test with Bing Copilot (manual query)
 - [ ] Monitor for AI citations (Clarity data)
+  - **Data trigger:** Activate both tasks as soon as Bing Webmaster Tools or Clarity shows AI traffic so we can capture real responses instead of placeholders.
+  - **Copilot test plan:** Re-run the 5 core intent queries, log screenshots, and update `/metrics/weekly/`.
+  - **AI citation tracking:** Create a Clarity segment filtered by `referrer=ai` + export weekly so citations can be tied back to sessions.
 
 ---
 
 ### Action 3.2: Add Calculator Widgets
 **Deadline:** January 17, 2026  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** 🚧 IN PROGRESS – December 6, 2025
 
 **Calculator 1: RPSN Calculator**
 - Location: Article 4 (Úrok a RPSN)
@@ -445,6 +452,16 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 - Inputs: Částka půjčky, Doba splácení
 - Output: Měsíční splátka, celkem zaplaceno, RPSN
 - Tech: JavaScript
+
+**Progress (Dec 6, 2025):**
+- **Refactored** `scripts/calculators.js` to support **multiple instances** via `data-calculator` and `data-field`/`data-result` attributes – no more reliance on global IDs.
+- Existing calculators migrated: homepage splátka (`data-calculator-id="homepage-splatek"`), valuation estimator (`ohodnoceni-guide`), RPSN (`srovnani-bankovni`).
+- All three calculators emit Clarity events with `calculatorId` payload for per-widget analytics.
+- Shared module `scripts/calculators.js` created (payment, value, RPSN logic + Clarity events) and loaded where needed.
+- Splátková kalkulačka live on `index.html` with matching WebApplication schema + structured data validation.
+- Hodnota auta estimator embedded in `blog/ohodnoceni-auta-pro-pujcku/` (UI + schema) using the same module.
+- RPSN kalkulačka section published in `blog/pujcka-pod-zastavu-vs-bankovni-uver/`, schema validated.
+- **Remaining work:** embed splátka calc in `rychla-pujcka-vs-zastava-auta`, RPSN calc in `zastava-auta-vs-spotrebitelsky-uver`, create dedicated Úrok/RPSN průvodce article, and document usage metrics.
 
 **Schema Markup for Calculators:**
 ```json
@@ -465,17 +482,29 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 **Expected Outcome:** Interactive tools increase engagement + AI visibility
 
 **Validation:**
-- [ ] 3 calculators implemented
-- [ ] Mobile responsive
-- [ ] WebApplication schema added
-- [ ] Clarity events tracking usage
+- [x] 3 calculator types implemented (payment, value, RPSN) in shared JS module
+- [x] Multi-instance support via data attributes (Dec 6, 2025)
+- [x] Mobile responsive (spot-checked homepage + valuation article widgets)
+- [x] WebApplication schema added (homepage splátky + valuation/RPSN articles)
+- [x] Clarity events tracking usage (`calc_payment_update`, `calc_value_update`, `calc_rpsn_update` with `calculatorId`)
+- [ ] Embed calculators in 2 additional comparison articles
+- [ ] Create dedicated Úrok/RPSN article with calculator
 
 ---
 
 ### Action 3.3: Advanced Engagement Tracking
 **Deadline:** January 24, 2026  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED – December 6, 2025
+
+**Implemented via `scripts/inject-tracking.js`:**
+- Scroll depth tracking (25%, 50%, 75%, 90%) – fires `scroll_25`, `scroll_50`, etc.
+- FAQ interaction tracking (`faq_interaction` on `<details><summary>` clicks)
+- CTA click tracking (`cta_primary_click`, `cta_secondary_click` on `[data-cta]` links)
+- Phone click tracking (`phone_click` on `a[href^="tel:"]`)
+- Form submit tracking (`form_submit` on `#leadForm`)
+
+All events auto-injected into every HTML file during `npm run build`.
 
 **Clarity Custom Events to Add:**
 

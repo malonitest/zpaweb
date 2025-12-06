@@ -1008,7 +1008,7 @@
                 </ol>
 
                 <section id="rpsn-kalkulacka" class="my-16">
-                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-10">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 lg:p-10" data-calculator="rpsn" data-calculator-id="srovnani-bankovni">
                         <div class="md:flex md:items-center md:justify-between mb-8">
                             <div class="max-w-2xl">
                                 <p class="text-sm font-semibold uppercase tracking-widest text-blue-700 mb-2">Interaktivní nástroj</p>
@@ -1022,20 +1022,20 @@
                             <form id="rpsnCalculator" class="space-y-5" novalidate>
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnAmount">Výše půjčky (Kč)</label>
-                                    <input id="rpsnAmount" name="rpsnAmount" type="number" min="50000" max="600000" step="5000" value="200000" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                    <input id="rpsnAmount" name="rpsnAmount" data-field="rpsnAmount" type="number" min="50000" max="600000" step="5000" value="200000" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnTerm">Doba splácení (měsíce)</label>
-                                    <input id="rpsnTerm" name="rpsnTerm" type="number" min="6" max="60" step="6" value="24" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
+                                    <input id="rpsnTerm" name="rpsnTerm" data-field="rpsnTerm" type="number" min="6" max="60" step="6" value="24" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500" required>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnRate">Úroková sazba p.a.</label>
-                                    <input id="rpsnRate" name="rpsnRate" type="number" min="5" max="35" step="0.1" value="18" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                    <input id="rpsnRate" name="rpsnRate" data-field="rpsnRate" type="number" min="5" max="35" step="0.1" value="18" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                                     <p class="text-xs text-gray-500 mt-1">Pro banku zadejte 7–12 %, pro zástavu auta obvykle 15–22 %.</p>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-semibold text-gray-700 mb-2" for="rpsnFees">Poplatky (zpracování, vedení)</label>
-                                    <input id="rpsnFees" name="rpsnFees" type="number" min="0" step="500" value="2500" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
+                                    <input id="rpsnFees" name="rpsnFees" data-field="rpsnFees" type="number" min="0" step="500" value="2500" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-200 focus:border-blue-500">
                                     <p class="text-xs text-gray-500 mt-1">Zahrňte jednorázové i měsíční poplatky, ať je srovnání férové.</p>
                                 </div>
                             </form>
@@ -1046,21 +1046,21 @@
                                         <p class="text-sm text-gray-500">Měsíční splátka</p>
                                         <p class="text-xs text-gray-400">Včetně úroku, bez poplatků</p>
                                     </div>
-                                    <strong id="rpsnMonthly" class="text-2xl font-semibold text-blue-900">–</strong>
+                                    <strong id="rpsnMonthly" data-result="rpsnMonthly" class="text-2xl font-semibold text-blue-900">–</strong>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <p class="text-sm text-gray-500">Celkové náklady</p>
                                         <p class="text-xs text-gray-400">Splátky + poplatky</p>
                                     </div>
-                                    <strong id="rpsnTotal" class="text-2xl font-semibold text-blue-900">–</strong>
+                                    <strong id="rpsnTotal" data-result="rpsnTotal" class="text-2xl font-semibold text-blue-900">–</strong>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <p class="text-sm text-gray-500">Efektivní RPSN</p>
                                         <p class="text-xs text-gray-400">Porovnává banku vs. zástavu</p>
                                     </div>
-                                    <strong id="rpsnApr" class="text-2xl font-semibold text-blue-900">–</strong>
+                                    <strong id="rpsnApr" data-result="rpsnApr" class="text-2xl font-semibold text-blue-900">–</strong>
                                 </div>
                                 <div class="p-4 bg-white rounded-xl border border-dashed border-gray-200 text-sm text-gray-600">
                                     <p class="font-semibold text-gray-900 mb-1">Tip odborníka</p>

@@ -1,0 +1,33 @@
+/* TEAM */
+
+Project Lead: Rostislav Sikora
+Role: Garant projektu AutoZástava24
+Experience: 25+ let v bankovnictví a fintech
+Contact: info@autozastava24.cz
+LinkedIn: linkedin.com/in/rostislav-sikora-4b70aa24/
+
+Content Author: Martin Pražák
+Role: Copywriter & SEO specialista
+Focus: Finanční průvodce, srovnávací články
+
+/* THANKS */
+
+Tailwind CSS - tailwindcss.com
+Microsoft Clarity - clarity.microsoft.com
+Google Analytics - analytics.google.com
+Azure Static Web Apps - azure.microsoft.com
+
+/* SITE */
+
+Last update: 2025/12/06
+Language: Czech (cs-CZ)
+Standards: HTML5, CSS3, ES6+
+Framework: Tailwind CSS
+Hosting: Azure Static Web Apps
+Analytics: Microsoft Clarity, Google Analytics 4
+IDE: VS Code + GitHub Copilot
+
+/* LOCATION */
+
+Praha, Česká republika
+Timezone: Europe/Prague (CET/CEST)
