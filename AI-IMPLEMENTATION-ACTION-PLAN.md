@@ -440,7 +440,7 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 - ✅ RPSN kalkulačka in `blog/rychla-pujcka-vs-zastava-auta/` with WebApplication schema (Dec 6)
 - ✅ RPSN kalkulačka in `blog/zastava-auta-vs-spotrebitelsky-uver/` with WebApplication schema (Dec 6)
 
-**Remaining work:** Create dedicated Úrok/RPSN průvodce article (Action 2.4, Article 4).
+**Remaining work:** ✅ Splněno – Úrok/RPSN průvodce (Action 2.4, Article 4) zveřejněn 7. 12. 2025 včetně vestavěné kalkulačky.
 
 **Schema Markup for Calculators:**
 ```json
