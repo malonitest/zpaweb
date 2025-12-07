@@ -554,7 +554,7 @@ document.querySelector('form').addEventListener('submit', () => {
 **Article 7: Právní Aspekty Zástavy**
 - Deadline: January 24, 2026 ✔️ publ. 7. 12. 2025
 - Stav: Hotový článek (`/blog/pravni-aspekty-zastavy/`) – 2 300+ slov, BlogPosting + FAQPage + HowTo + Breadcrumb schema, právní checklist, timeline a právně laděné CTA pro konzultaci.
-- Next: Přidat interní odkazy z právních článků a sledovat výkon v Clarity (AI intent sekce).
+- Update 7. 12. 2025: Interní odkazy z právních/procesních/vozidlových článků přidány na pražský průvodce; next step je sledovat výkon v Clarity (AI intent sekce) a upravit CTA podle dat.
 
 **Article 8: 10 Tipů Využití**
 - Deadline: January 31, 2026
@@ -575,7 +575,8 @@ document.querySelector('form').addEventListener('submit', () => {
 **1. Praha Article (Week 11)**
 - ✅ Publikováno 7. 12. 2025 (`/blog/pujcka-pod-zastavu-praha/`) – 2 400+ slov, BlogPosting + LocalBusiness + HowTo + FAQPage.
 - Obsah: metro huby Karlín/Chodov, tabulka logistických uzlů, district cards, CTA s pražskou hotline.
-- Další krok: nasadit interní odkazy z městských článků a sledovat Clarity segment "Praha".
+- 7. 12. 2025: Interní odkazy nasazeny z právního, procesního i vozidlového obsahu ➝ `/blog/pujcka-pod-zastavu-praha/`.
+- Další krok: vytvořit a monitorovat Clarity segment "Praha" (AI návštěvy + CTA výkon), vyhodnotit první týden dat a připravit podklady pro Brno brief.
 
 **2. Brno Article (Week 12)**
 - 1,800+ words
