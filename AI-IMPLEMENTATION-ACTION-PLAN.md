@@ -543,7 +543,7 @@ document.querySelector('form').addEventListener('submit', () => {
 ### Action 3.4: Continue Phase 1 Articles (5-8)
 **Deadline:** January 31, 2026  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** 🚧 IN PROGRESS – Article 7 publikován 7. prosince 2025
 
 **Article 5: Půjčka Pro OSVČ**
 - Deadline: January 10, 2026
@@ -552,7 +552,9 @@ document.querySelector('form').addEventListener('submit', () => {
 - Deadline: January 17, 2026
 
 **Article 7: Právní Aspekty Zástavy**
-- Deadline: January 24, 2026
+- Deadline: January 24, 2026 ✔️ publ. 7. 12. 2025
+- Stav: Hotový článek (`/blog/pravni-aspekty-zastavy/`) – 2 300+ slov, BlogPosting + FAQPage + HowTo + Breadcrumb schema, právní checklist, timeline a právně laděné CTA pro konzultaci.
+- Next: Přidat interní odkazy z právních článků a sledovat výkon v Clarity (AI intent sekce).
 
 **Article 8: 10 Tipů Využití**
 - Deadline: January 31, 2026
