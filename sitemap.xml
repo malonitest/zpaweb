@@ -156,8 +156,29 @@
 
   <!-- Ostatní -->
   <url>
+    <loc>https://www.autozastava24.cz/blog/co-se-stane-kdyz-nesplacite-pujcku/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/predcasne-splaceni-pujcky/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.autozastava24.cz/blog/rychla-pujcka-vs-zastava-auta/</loc>
     <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/urok-a-rpsn-pruvodce/</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

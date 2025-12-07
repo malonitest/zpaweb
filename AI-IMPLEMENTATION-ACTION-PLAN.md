@@ -335,55 +335,30 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 ### Action 2.4: Continue Phase 1 Articles (2-4)
 **Deadline:** December 20, 2025  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** ✅ COMPLETED – December 7, 2025
 
 **Article 2: Co Se Stane Když Nesplácíte**
-- **Slug:** `/blog/co-se-stane-kdyz-nesplacite-pujcku/`
-- **Target:** 1,800 words
-- **Priority:** HIGH (trust-building)
-- **Key Sections:**
-  * Timeline: 30, 60, 90 days
-  * Penalties and fees
-  * Restructuring options
-  * Legal steps
-  * Consumer protection
-  * Prevention tips
-- **Schema:** FAQPage
-- **Deadline:** December 6, 2025
+- **URL:** `/blog/co-se-stane-kdyz-nesplacite-pujcku/` (publ. 6. 12. 2025)
+- **Details:** 2 000+ slov, timeline 30/60/90 dnů, restrukturalizace a prevence.
+- **Schema:** BlogPosting + FAQPage (8 otázek) + Breadcrumb + QAPage.
 
 **Article 3: Předčasné Splacení Půjčky**
-- **Slug:** `/blog/predcasne-splaceni-pujcky/`
-- **Target:** 1,500 words
-- **Priority:** MEDIUM
-- **Key Sections:**
-  * Right to early repayment
-  * Savings calculator
-  * Process step-by-step
-  * Fees (if any)
-  * When it makes sense
-- **Schema:** HowTo, WebApplication
-- **Deadline:** December 13, 2025
+- **URL:** `/blog/predcasne-splaceni-pujcky/` (publ. 6. 12. 2025)
+- **Details:** 1 600+ slov, krokový návod + modelová kalkulace úspory, HowTo schema.
+- **Schema:** BlogPosting + HowTo + FAQPage + Breadcrumb.
 
 **Article 4: Úrok a RPSN Průvodce**
-- **Slug:** `/blog/urok-a-rpsn-pujcky-pod-zastavu/`
-- **Target:** 2,000 words
-- **Priority:** HIGH (financial transparency)
-- **Key Sections:**
-  * What is RPSN
-  * Interest vs RPSN
-  * Factors affecting rate
-  * Market comparison
-  * Interactive calculator
-- **Schema:** HowTo, FAQPage
-- **Deadline:** December 20, 2025
+- **URL:** `/blog/urok-a-rpsn-pruvodce/` (publ. 7. 12. 2025)
+- **Details:** 2 300+ slov, tržní srovnání, strategie snížení nákladů a RPSN kalkulačka.
+- **Schema:** BlogPosting + HowTo + FAQPage + Breadcrumb + WebApplication (kalkulačka).
 
-**Expected Outcome:** 15 total articles (Phase 1: 4/8 complete)
+**Expected Outcome:** 15 total článků (Phase 1 content hotovo, všechny 4 jádrové průvodce online)
 
 **Validation:**
-- [ ] Articles follow quality checklist
-- [ ] Schema markup validated
-- [ ] Internal linking implemented
-- [ ] Sitemap regenerated
+- [x] Articles follow quality checklist (TOC, CTA, FAQ, related links)
+- [x] Schema markup validováno lokálně + Google Rich Results spot-check (co-se-stane..., predcasne-splaceni)
+- [x] Internal linking doplněno (nové články odkazují na stávající průvodce + kalkulačku)
+- [ ] Sitemap regenerována a nasazena (run `npm run build` po ověření)
 
 ---
 
@@ -433,7 +408,7 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 ### Action 3.2: Add Calculator Widgets
 **Deadline:** January 17, 2026  
 **Owner:** [Assign]  
-**Status:** 🚧 IN PROGRESS – December 6, 2025
+**Status:** ✅ MOSTLY COMPLETE – December 6, 2025 (pending: Úrok/RPSN dedicated article)
 
 **Calculator 1: RPSN Calculator**
 - Location: Article 4 (Úrok a RPSN)
@@ -454,14 +429,18 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 - Tech: JavaScript
 
 **Progress (Dec 6, 2025):**
-- **Refactored** `scripts/calculators.js` to support **multiple instances** via `data-calculator` and `data-field`/`data-result` attributes – no more reliance on global IDs.
-- Existing calculators migrated: homepage splátka (`data-calculator-id="homepage-splatek"`), valuation estimator (`ohodnoceni-guide`), RPSN (`srovnani-bankovni`).
-- All three calculators emit Clarity events with `calculatorId` payload for per-widget analytics.
+- **Refactored** `scripts/calculators.js` to support **multiple instances** via `data-calc-type` and `data-field`/`data-result` attributes – no more reliance on global IDs.
+- All three calculator types emit Clarity events with `calculatorId` payload for per-widget analytics.
 - Shared module `scripts/calculators.js` created (payment, value, RPSN logic + Clarity events) and loaded where needed.
-- Splátková kalkulačka live on `index.html` with matching WebApplication schema + structured data validation.
-- Hodnota auta estimator embedded in `blog/ohodnoceni-auta-pro-pujcku/` (UI + schema) using the same module.
-- RPSN kalkulačka section published in `blog/pujcka-pod-zastavu-vs-bankovni-uver/`, schema validated.
-- **Remaining work:** embed splátka calc in `rychla-pujcka-vs-zastava-auta`, RPSN calc in `zastava-auta-vs-spotrebitelsky-uver`, create dedicated Úrok/RPSN průvodce article, and document usage metrics.
+
+**Deployed Calculators:**
+- ✅ Splátková kalkulačka on `index.html` with WebApplication schema
+- ✅ Hodnota auta estimator in `blog/ohodnoceni-auta-pro-pujcku/` with WebApplication schema
+- ✅ RPSN kalkulačka in `blog/pujcka-pod-zastavu-vs-bankovni-uver/` with WebApplication schema
+- ✅ RPSN kalkulačka in `blog/rychla-pujcka-vs-zastava-auta/` with WebApplication schema (Dec 6)
+- ✅ RPSN kalkulačka in `blog/zastava-auta-vs-spotrebitelsky-uver/` with WebApplication schema (Dec 6)
+
+**Remaining work:** Create dedicated Úrok/RPSN průvodce article (Action 2.4, Article 4).
 
 **Schema Markup for Calculators:**
 ```json
@@ -485,10 +464,10 @@ V každém článku byla doplněna přirozená věta či odstavec navazující n
 - [x] 3 calculator types implemented (payment, value, RPSN) in shared JS module
 - [x] Multi-instance support via data attributes (Dec 6, 2025)
 - [x] Mobile responsive (spot-checked homepage + valuation article widgets)
-- [x] WebApplication schema added (homepage splátky + valuation/RPSN articles)
+- [x] WebApplication schema added (homepage + 4 blog articles)
 - [x] Clarity events tracking usage (`calc_payment_update`, `calc_value_update`, `calc_rpsn_update` with `calculatorId`)
-- [ ] Embed calculators in 2 additional comparison articles
-- [ ] Create dedicated Úrok/RPSN article with calculator
+- [x] Embed calculators in all 3 comparison articles (Dec 6, 2025)
+- [ ] Create dedicated Úrok/RPSN article with calculator (see Action 2.4)
 
 ---
 
