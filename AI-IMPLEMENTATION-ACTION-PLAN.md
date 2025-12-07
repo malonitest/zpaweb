@@ -568,16 +568,14 @@ document.querySelector('form').addEventListener('submit', () => {
 ### Action 4.1: Create Regional Content
 **Deadline:** February 28, 2026  
 **Owner:** [Assign]  
-**Status:** ⏳ Not Started
+**Status:** 🚧 IN PROGRESS – Praha publikována 7. prosince 2025
 
 **Priority Order:**
 
 **1. Praha Article (Week 11)**
-- 2,000+ words
-- LocalBusiness schema
-- Metro station guides
-- District coverage
-- Parking considerations
+- ✅ Publikováno 7. 12. 2025 (`/blog/pujcka-pod-zastavu-praha/`) – 2 400+ slov, BlogPosting + LocalBusiness + HowTo + FAQPage.
+- Obsah: metro huby Karlín/Chodov, tabulka logistických uzlů, district cards, CTA s pražskou hotline.
+- Další krok: nasadit interní odkazy z městských článků a sledovat Clarity segment "Praha".
 
 **2. Brno Article (Week 12)**
 - 1,800+ words
