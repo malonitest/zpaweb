@@ -86,17 +86,52 @@
     <!-- Categories -->
     <section class="bg-white py-8 border-b">
         <div class="container mx-auto px-4 max-w-6xl">
-            <div class="flex flex-wrap gap-3">
-                <a href="#" class="px-4 py-2 bg-blue-800 text-white rounded-full text-sm font-semibold">Vše</a>
-                <a href="#pruvodce" class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold hover:bg-blue-200">Průvodce</a>
-                <a href="#srovnani" class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold hover:bg-purple-200">Srovnání</a>
-                <a href="#vozidla" class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold hover:bg-green-200">Vozidla</a>
-                <a href="#financni-rady" class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold hover:bg-orange-200">Finanční Rady</a>
-                <a href="#pravni" class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold hover:bg-indigo-200">Právní</a>
-                <a href="#regional" class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">Regiony</a>
+            <div class="flex flex-wrap gap-3" id="blog-category-filters">
+                <a href="#" data-category="all" class="px-4 py-2 bg-blue-800 text-white rounded-full text-sm font-semibold">Vše</a>
+                <a href="#pruvodce" data-category="pruvodce" class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold hover:bg-blue-200">Průvodce</a>
+                <a href="#srovnani" data-category="srovnani" class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold hover:bg-purple-200">Srovnání</a>
+                <a href="#vozidla" data-category="vozidla" class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold hover:bg-green-200">Vozidla</a>
+                <a href="#financni-rady" data-category="financni-rady" class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold hover:bg-orange-200">Finanční Rady</a>
+                <a href="#pravni" data-category="pravni" class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold hover:bg-indigo-200">Právní</a>
+                <a href="#regional" data-category="regional" class="px-4 py-2 bg-teal-100 text-teal-800 rounded-full text-sm font-semibold hover:bg-teal-200">Regiony</a>
             </div>
         </div>
     </section>
+
+    <script>
+        (function () {
+            const container = document.getElementById('blog-category-filters');
+            if (!container) return;
+
+            const links = Array.from(container.querySelectorAll('a[data-category]'));
+            if (links.length === 0) return;
+
+            const originalClasses = new Map();
+            for (const link of links) {
+                originalClasses.set(link, link.className);
+            }
+
+            const setActive = (activeCategory) => {
+                for (const link of links) {
+                    link.className = originalClasses.get(link) || link.className;
+                }
+
+                const activeLink = links.find((l) => l.dataset.category === activeCategory);
+                if (activeLink) {
+                    activeLink.className = 'px-4 py-2 bg-blue-800 text-white rounded-full text-sm font-semibold';
+                }
+            };
+
+            const categoryFromHash = () => {
+                const hash = (window.location.hash || '').replace('#', '');
+                if (!hash) return 'all';
+                return hash;
+            };
+
+            setActive(categoryFromHash());
+            window.addEventListener('hashchange', () => setActive(categoryFromHash()));
+        })();
+    </script>
 
     <!-- Featured Article -->
     <section class="py-12">
