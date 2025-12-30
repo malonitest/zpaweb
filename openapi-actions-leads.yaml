@@ -1,0 +1,112 @@
+openapi: 3.1.0
+info:
+  title: AutoZástava24 Leads API
+  version: 1.0.0
+  description: |
+    Public endpoint for creating a lead (contact request) on AutoZástava24.
+
+    This endpoint is designed to be used by a website widget and Custom GPT Actions.
+servers:
+  - url: https://www.autozastava24.cz
+paths:
+  /api/leads:
+    post:
+      operationId: createLead
+      summary: Create a new lead
+      description: Creates a lead and forwards it to the internal lead intake system.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - name
+                - phone
+                - email
+              properties:
+                name:
+                  type: string
+                  minLength: 2
+                  description: Customer full name
+                  example: Jan Novák
+                phone:
+                  type: string
+                  minLength: 6
+                  description: Customer phone number
+                  example: "+420 777 123 456"
+                email:
+                  type: string
+                  format: email
+                  description: Customer email
+                  example: jan.novak@example.com
+                model:
+                  type: string
+                  description: Vehicle model/brand (optional)
+                  example: Škoda Octavia
+                requestedAmount:
+                  type: integer
+                  minimum: 0
+                  description: Requested amount in CZK (optional)
+                  example: 150000
+                carRegistrationYear:
+                  type: integer
+                  description: Vehicle registration year (optional)
+                  example: 2020
+                carMileage:
+                  type: integer
+                  minimum: 0
+                  description: Vehicle mileage (optional)
+                  example: 85000
+                notes:
+                  type: string
+                  description: Optional customer notes
+                  example: "Potřebuji peníze do týdne."
+                referrer:
+                  type: string
+                  description: Page URL where the request was initiated (optional)
+                  example: https://www.autozastava24.cz/#formular
+      responses:
+        "200":
+          description: Lead created
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Upstream response (passed through)
+        "201":
+          description: Lead created
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Upstream response (passed through)
+        "400":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                      missing:
+                        type: array
+                        items:
+                          type: string
+        "502":
+          description: Upstream service unavailable
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string

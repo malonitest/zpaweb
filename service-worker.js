@@ -24,6 +24,15 @@ self.addEventListener('install', event => {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  // Never handle API calls or non-GET requests in the SW cache layer.
+  // This prevents POST /api/* from being cached/intercepted and breaking JSON flows.
+  if (event.request.method !== 'GET' || url.pathname.startsWith('/api/')) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -52,8 +61,15 @@ self.addEventListener('fetch', event => {
         );
       })
       .catch(() => {
-        // Return offline page if available
-        return caches.match('/index.html');
+        // Offline fallback only for navigations (HTML pages), never for assets/API.
+        if (event.request.mode === 'navigate') {
+          return caches.match('/index.html');
+        }
+
+        return new Response('', {
+          status: 503,
+          statusText: 'Service Unavailable'
+        });
       })
   );
 });
