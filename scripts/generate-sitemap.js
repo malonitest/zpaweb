@@ -29,14 +29,31 @@ const blogCategories = {
   'dokumenty': { priority: 0.8, category: 'Průvodce' },
   'zastavni-smlouva': { priority: 0.8, category: 'Průvodce' },
   'ohodnoceni': { priority: 0.9, category: 'Průvodce' },
+  'checklist': { priority: 0.8, category: 'Průvodce' },
+  'chybi-technicky-prukaz': { priority: 0.8, category: 'Průvodce' },
+  'spoluvlastnik': { priority: 0.8, category: 'Průvodce' },
   'pujcka-pod-zastavu-vs': { priority: 0.8, category: 'Srovnání' },
   'zastava-auta-vs': { priority: 0.8, category: 'Srovnání' },
   'leasing-vs': { priority: 0.8, category: 'Srovnání' },
+  'rychla-pujcka-vs': { priority: 0.8, category: 'Srovnání' },
+  'rozvaha-zastava-vs': { priority: 0.8, category: 'Srovnání' },
   'pujcka-pod-zastavu-skody': { priority: 0.8, category: 'Vozidla' },
   'pujcka-pod-volkswagen': { priority: 0.8, category: 'Vozidla' },
   'dodavky-uzitkove': { priority: 0.8, category: 'Vozidla' },
   'tipy-jak': { priority: 0.8, category: 'Finanční Rady' },
-  'rizeni-rodinnych': { priority: 0.8, category: 'Finanční Rady' }
+  'rizeni-rodinnych': { priority: 0.8, category: 'Finanční Rady' },
+  'co-se-stane-kdyz-nesplacite': { priority: 0.8, category: 'Finanční Rady' },
+  'urok-a-rpsn': { priority: 0.8, category: 'Finanční Rady' },
+  'predcasne-splaceni': { priority: 0.8, category: 'Finanční Rady' },
+  'kolik-stoji-zpetny-pronajem': { priority: 0.8, category: 'Finanční Rady' },
+  'jak-poznat-ferovou-nabidku': { priority: 0.8, category: 'Finanční Rady' },
+  'myty-o-zastave-auta': { priority: 0.8, category: 'Finanční Rady' },
+  'pravni-aspekty': { priority: 0.8, category: 'Právní' },
+  'predcasne-ukonceni': { priority: 0.8, category: 'Právní' },
+  'pujcka-pod-zastavu-mesta-srovnani': { priority: 0.7, category: 'Regiony' },
+  'pujcka-pod-zastavu-praha': { priority: 0.7, category: 'Regiony' },
+  'pujcka-pod-zastavu-brno': { priority: 0.7, category: 'Regiony' },
+  'pujcka-pod-zastavu-ostrava': { priority: 0.7, category: 'Regiony' }
 };
 
 function getLastModified(filePath) {
@@ -183,6 +200,8 @@ function generateSitemap() {
     'Srovnání': [],
     'Vozidla': [],
     'Finanční Rady': [],
+    'Regiony': [],
+    'Právní': [],
     'Legal Pages': []
   };
 

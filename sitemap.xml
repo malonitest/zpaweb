@@ -60,7 +60,28 @@
   </url>
 
   <url>
+    <loc>https://www.autozastava24.cz/blog/checklist-dokumentu-fo-osvc-sro/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/chybi-technicky-prukaz-co-delat/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.autozastava24.cz/blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/spoluvlastnik-plna-moc-auto-na-firmu/</loc>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -83,6 +104,20 @@
 
   <url>
     <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-vs-bankovni-uver/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/rozvaha-zastava-vs-spotrebak-vs-leasing/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/rychla-pujcka-vs-zastava-auta/</loc>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -119,6 +154,41 @@
 
   <!-- Finanční Rady -->
   <url>
+    <loc>https://www.autozastava24.cz/blog/co-se-stane-kdyz-nesplacite-pujcku/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/jak-poznat-ferovou-nabidku-na-co-se-ptat/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/kolik-stoji-zpetny-pronajem-auta/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/myty-o-zastave-auta-co-je-realita/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/predcasne-splaceni-pujcky/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.autozastava24.cz/blog/rizeni-rodinnych-financi-kdy-vyuzit-zastavu-auta/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
@@ -127,6 +197,57 @@
 
   <url>
     <loc>https://www.autozastava24.cz/blog/tipy-jak-efektivne-vyuzit-pujcku-pod-zastavu/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/urok-a-rpsn-pruvodce/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Regiony -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-brno/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-mesta-srovnani/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-ostrava/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-praha/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Právní -->
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pravni-aspekty-zastavy/</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/predcasne-ukonceni-vyrovnani-postup/</loc>
     <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -159,126 +280,6 @@
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
-  </url>
-
-  <!-- Ostatní -->
-  <url>
-    <loc>https://www.autozastava24.cz/blog/checklist-dokumentu-fo-osvc-sro/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/chybi-technicky-prukaz-co-delat/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/co-se-stane-kdyz-nesplacite-pujcku/</loc>
-    <lastmod>2025-12-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/jak-poznat-ferovou-nabidku-na-co-se-ptat/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/kolik-stoji-zpetny-pronajem-auta/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/myty-o-zastave-auta-co-je-realita/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/pravni-aspekty-zastavy/</loc>
-    <lastmod>2025-12-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/predcasne-splaceni-pujcky/</loc>
-    <lastmod>2025-12-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/predcasne-ukonceni-vyrovnani-postup/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-brno/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-mesta-srovnani/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-ostrava/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-praha/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/rozvaha-zastava-vs-spotrebak-vs-leasing/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/rychla-pujcka-vs-zastava-auta/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/spoluvlastnik-plna-moc-auto-na-firmu/</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autozastava24.cz/blog/urok-a-rpsn-pruvodce/</loc>
-    <lastmod>2025-12-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
 </urlset>
