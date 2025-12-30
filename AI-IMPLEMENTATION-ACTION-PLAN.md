@@ -568,7 +568,7 @@ document.querySelector('form').addEventListener('submit', () => {
 ### Action 4.1: Create Regional Content
 **Deadline:** February 28, 2026  
 **Owner:** [Assign]  
-**Status:** 🚧 IN PROGRESS – Praha publikována 7. prosince 2025
+**Status:** 🚧 IN PROGRESS – Praha (7. 12.), Brno (8. 12.), Ostrava (9. 12.) publikovány
 
 **Priority Order:**
 
@@ -579,19 +579,23 @@ document.querySelector('form').addEventListener('submit', () => {
 - Další krok: vytvořit a monitorovat Clarity segment "Praha" (AI návštěvy + CTA výkon), vyhodnotit první týden dat a připravit podklady pro Brno brief.
 
 **2. Brno Article (Week 12)**
-- 1,800+ words
-- South Moravia context
-- Local provider landscape
+- ✅ Publikováno 8. 12. 2025 (`/blog/pujcka-pod-zastavu-brno/`) – 2 000+ slov, BlogPosting + LocalBusiness + FAQPage + HowTo + Speakable schema.
+- Hotovo: D1 workflow, district cards (Královo Pole, Líšeň, Bystrc), logistika Cejl ➝ Heršpice ➝ Tuřany, tabulka "Brno vs. Praha", dvě citace klientů a kalkulačka s defaultem 220 000 Kč (`data-calculator-id="brno-payment"`).
+- CTA: primární `/kalkulacka/?region=brno`, sekundární hotline `+420 739 651 217`, sledování přes `data-cta` + Clarity eventy.
+- Další kroky: přidat brněnskou kartu na `blog/index.html`, aktualizovat interní odkazy z vozidlových článků (dodávky, Škoda, právní obsah) → Brno, vytvořit Clarity segment "Brno" a vyhodnotit CTA výkon proti Praze.
 
 **3. Ostrava Article (Week 13)**
-- 1,700+ words
-- Industrial economy context
-- Polish border considerations
+- ✅ Publikováno 9. 12. 2025 (`/blog/pujcka-pod-zastavu-ostrava/`) – 2 100+ slov, BlogPosting + LocalBusiness + FAQPage + HowTo + Speakable schema.
+- Hotovo: industriální páteř (Vítkovice, Hrabová, Mošnov), přeshraniční scénáře Bohumín–Zebrzydowice–Katovice, ekologické zóny, mapa pick-up bodů, tabulka "Ostrava vs. Katovice", kalkulačka s defaultem 180 000 Kč (`data-calculator-id="ostrava-payment"`) a CTA blok s hotline `+420 739 651 218`.
+- Citace + case studies: směnový mistr z Dolních Vítkovic, kurýrka Bohumín ↔ Katovice, tři mini karty (Hrabová, Poruba, Mošnov).
+- Další kroky: aktualizovat `blog/index.html` regionálními kartami (Praha, Brno, Ostrava), přidat interní odkazy z článků o dodávkách/refinancování/Škodě Octavia, vytvořit Clarity segment "Ostrava" + Google Business Profile štítek, sledovat CTA výkon vs Brno.
 
 **4. Regional Comparison (Week 14)**
-- 2,000+ words
-- Comparison table
-- Market analysis
+- 🗓️ Publikovat do 4. 1. 2026 (`/blog/pujcka-pod-zastavu-mesta-srovnani/`) – min. 2 200 slov, BlogPosting + HowTo + FAQPage + Table schema, sumarizující Praha vs. Brno vs. Ostrava (rychlost výplaty, průměrná částka, dostupnost přejímky, lokální rizika).
+- Layout: intro infobox + TOC ➝ přehledový graf (AI search dotazy po regionech), hlavní srovnávací tabulka (min. 8 kritérií), sekce "Kdy zvolit Praha/Brno/Ostrava" s kartami, procesní HowTo pro přeposlání podkladů z regionů a FAQ shrnující časté dotazy o lokalitách.
+- Data prvky: použít interní hodnoty z Clarity/CRM (anonymizované) pro orientační medians, doplnit heatmapu poptávky (SVG) + mini-case studies pro každý region (3-4 věty s citací). Embed kalkulačky: payment (default 250k Praha, 220k Brno, 180k Ostrava) s přepínáním pomocí `data-variant` a custom buttons.
+- CTA + odkazy: trojblok CTA s regionálními hotline, společný sekundární CTA `/kalkulacka/?region=multi`, interní odkazy zpět na jednotlivé regionální články a právní/procesní průvodce. Po publikaci obnovit `sitemap.xml`, přidat kartu na `blog/index.html` v sekci Průvodce a propagovat na homepage "Regionální centrum" (mini card deck).
+- SEO/AI tasklist: přidat speakable schema pro shrnutí odpovědi "Jak se liší půjčka pod zástavu v regionech?", aktualizovat `humans.txt` (nový autor, pokud se zapojí), spustit IndexNow a manuální Bing submit, připravit prompt kit pro Copilot/Perplexity s odkazy na nový článek.
 
 **Expected Outcome:** Dominate local voice search
 

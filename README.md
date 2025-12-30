@@ -136,7 +136,7 @@ Vytvořte následující soubory:
 1. Create `/blog/article-slug/index.html`
 2. Copy structure from existing article (e.g., `jak-funguje-pujcka-pod-zastavu-auta/`)
 3. Include required schemas: **BlogPosting** + **BreadcrumbList** + **FAQPage**
-4. Add author attribution (Rostislav Sikora nebo Martin Pražák)
+4. Add author attribution (Rostislav Sikora)
 5. Run `npm run generate:sitemap` to auto-discover
 6. Update `blog/index.html` with article card
 

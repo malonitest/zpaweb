@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chystáme velké srovnání půjček pod zástavu ve městech Praha, Brno a Ostrava. Publikace je naplánována na 4. ledna 2026.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.autozastava24.cz/blog/pujcka-pod-zastavu-mesta-srovnani/">
+    <title>Srovnání měst – brzy online | AutoZástava24</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tracking: Google Analytics (auto) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2R8P5WZG3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-S2R8P5WZG3");
+    </script>
+<!-- /Tracking: Google Analytics (auto) -->
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 text-white min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-16">
+        <p class="text-xs uppercase tracking-[0.25em] text-indigo-200 mb-4">Week 14 / Action 4.1</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Regionální srovnání: Praha vs. Brno vs. Ostrava</h1>
+        <p class="text-lg text-slate-100 mb-8">Právě připravujeme dlouhý článek (2 200+ slov) s tabulkou 8 kritérií, heatmapou poptávky, kalkulačkami s variantami 250k / 220k / 180k a sekcí "Kdy zvolit které město". Publikace proběhne 4. ledna 2026 spolu s aktualizací sitemap a homepage mini-card decku.</p>
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <h2 class="text-xl font-semibold mb-2">Co bude v článku</h2>
+                <ul class="text-sm text-slate-200 space-y-2">
+                    <li>• Graf AI vyhledávání dle regionu.</li>
+                    <li>• Tabulka (8+ kritérií) se schématem Table.</li>
+                    <li>• Case studies a citace z každého města.</li>
+                    <li>• CTA blok s trojicí hotline + multi kalkulačka.</li>
+                </ul>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <h2 class="text-xl font-semibold mb-2">Technické kroky</h2>
+                <ul class="text-sm text-slate-200 space-y-2">
+                    <li>• JSON-LD: BlogPosting + HowTo + FAQPage + Table.</li>
+                    <li>• Speakable schema pro shrnutí odpovědi.</li>
+                    <li>• Aktualizace blog indexu a homepage (mini cards).</li>
+                    <li>• IndexNow ping + manuální Bing submit.</li>
+                </ul>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                <h2 class="text-xl font-semibold mb-2">Stav</h2>
+                <p class="text-sm text-slate-200">Outline hotový, čekáme na první týden dat z Clarity segmentů "Praha" a "Brno" (AI návštěvy + CTA). Jakmile data dorazí, doplníme grafy a text.</p>
+                <p class="text-sm text-slate-200 mt-3">Pro rychlou orientaci zatím využijte <a href="/blog/pujcka-pod-zastavu-praha/" class="text-amber-300 underline">Prahu</a> a <a href="/blog/pujcka-pod-zastavu-brno/" class="text-amber-300 underline">Brno</a>. Ostravská část se připojí ihned po dokončení.</p>
+            </div>
+        </div>
+        <p class="text-sm text-slate-300">Máte data, která bychom měli do srovnání zapracovat? Napište na <a href="mailto:content@autozastava24.cz" class="text-amber-300 underline">content@autozastava24.cz</a>.</p>
+    </div>
+<!-- Tracking: Microsoft Clarity (auto) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "ua2ebm7dg9");
+    </script>
+<!-- /Tracking: Microsoft Clarity (auto) -->
+<!-- Tracking: Microsoft Clarity Events (auto) -->
+    <script>
+        (function () {
+            const fireClarityEvent = (name, data) => {
+                if (typeof clarity === "function") {
+                    clarity("event", name, Object.assign({ page: window.location.pathname }, data));
+                }
+            };
+            const onReady = (callback) => {
+                if (document.readyState === "complete" || document.readyState === "interactive") {
+                    callback();
+                    return;
+                }
+                document.addEventListener("DOMContentLoaded", callback);
+            };
+            onReady(() => {
+                const leadForm = document.getElementById("leadForm");
+                if (leadForm) {
+                    leadForm.addEventListener("submit", () => fireClarityEvent("form_submit"));
+                }
+                document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+                    link.addEventListener("click", () => {
+                        fireClarityEvent("phone_click", { phone: link.getAttribute("href").replace("tel:", "") });
+                    });
+                });
+                document.querySelectorAll("a[data-cta]").forEach((ctaLink) => {
+                    ctaLink.addEventListener("click", () => {
+                        const ctaType = ctaLink.getAttribute("data-cta") || "unknown";
+                        const label = (ctaLink.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent(`cta_${ctaType}_click`, {
+                            ctaType,
+                            href: ctaLink.getAttribute("href"),
+                            label
+                        });
+                    });
+                });
+                document.querySelectorAll("details summary").forEach((summaryEl) => {
+                    summaryEl.addEventListener("click", () => {
+                        const text = (summaryEl.textContent || "").trim().substring(0, 120);
+                        fireClarityEvent("faq_interaction", { question: text });
+                    });
+                });
+                const thresholds = [25, 50, 75, 90];
+                const firedDepths = new Set();
+                window.addEventListener("scroll", () => {
+                    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    if (maxScroll <= 0) {
+                        return;
+                    }
+                    const percent = Math.round((window.scrollY / maxScroll) * 100);
+                    thresholds.forEach((depth) => {
+                        if (!firedDepths.has(depth) && percent >= depth) {
+                            firedDepths.add(depth);
+                            fireClarityEvent(`scroll_${depth}`, { depth });
+                        }
+                    });
+                }, { passive: true });
+            });
+        })();
+    </script>
+<!-- /Tracking: Microsoft Clarity Events (auto) -->
+</body>
+</html>

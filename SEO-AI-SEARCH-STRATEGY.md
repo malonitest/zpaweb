@@ -42,7 +42,7 @@
 - **Strong Schema.org**: BlogPosting + BreadcrumbList
 - **AI-optimized format**: Question-answer style, highlight boxes, practical tips
 - **2,500+ words** of comprehensive content
-- **Author attribution**: Martin Pražák with credentials
+- **Author attribution**: Rostislav Sikora (garant projektu)
 - **Natural language** suitable for AI citation
 
 **3. E-E-A-T Signals**
@@ -59,9 +59,9 @@
 - Missing comparison, regional, and use case content
 
 **2. Author System**
-- Martin Pražák mentioned but no dedicated author page
-- Need author archive pages
-- Need more author bios and credentials
+- Single author/guarantor: Rostislav Sikora
+- Maintain a dedicated author page and consistent byline across all articles
+- Keep credentials and bio consistent for E-E-A-T
 
 **3. Internal Linking**
 - Blog article links to non-existent articles
@@ -80,7 +80,7 @@
 ### Phase 1: Immediate Quick Wins (Week 1-2)
 
 #### 1. Create Author Pages
-**Location:** `/autor/martin-prazak/`, `/autor/jana-novakova/`, etc.
+**Location:** `/autor/rostislav-sikora/`
 
 **Template Structure:**
 ```html
@@ -101,12 +101,12 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Martin Pražák",
-  "jobTitle": "Finanční poradce",
-  "description": "Expert na alternativní financování s 8 lety zkušeností...",
-  "alumniOf": "Vysoká škola ekonomická v Praze",
+  "name": "Rostislav Sikora",
+  "jobTitle": "Garant projektu AutoZástava24",
+  "description": "25 let zkušeností v bankovnictví a financování.",
+  "alumniOf": "",
   "knowsAbout": ["Financování vozidel", "Půjčky pod zástavu", "Osobní finance"],
-  "email": "martin@autozastava24.cz",
+  "email": "info@autozastava24.cz",
   "worksFor": {
     "@type": "Organization",
     "name": "AutoZástava24"
@@ -655,7 +655,7 @@ Homepage
 │   │   ├── Praha
 │   │   └── Brno
 │   └── Author Pages
-│       ├── Martin Pražák
+│       ├── Rostislav Sikora
 │       └── Jana Nováková
 └── Contact (/kontakt)
 ```
@@ -952,7 +952,7 @@ Check for mentions in:
 
 #### Day 1-2: Author Setup
 - [ ] Create `/autor/` folder structure
-- [ ] Write bio for Martin Pražák (200 words)
+- [ ] Write bio for Rostislav Sikora (200 words)
 - [ ] Create 2-3 additional author personas
 - [ ] Add author Schema.org markup
 - [ ] Take author headshots

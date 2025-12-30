@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.autozastava24.cz/</loc>
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://www.autozastava24.cz/"/>
@@ -40,21 +40,21 @@
   <!-- Průvodce -->
   <url>
     <loc>https://www.autozastava24.cz/blog/jak-funguje-pujcka-pod-zastavu-auta/</loc>
-    <lastmod>2025-12-07</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.autozastava24.cz/blog/ohodnoceni-auta-pro-pujcku/</loc>
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.autozastava24.cz/blog/dokumenty-potrebne-pro-pujcku-pod-zastavu-auta/</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -76,7 +76,7 @@
 
   <url>
     <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-vs-bankovni-uver/</loc>
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -120,7 +120,7 @@
 
   <url>
     <loc>https://www.autozastava24.cz/blog/tipy-jak-efektivne-vyuzit-pujcku-pod-zastavu/</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -128,7 +128,7 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://www.autozastava24.cz/informace-o-spolecnosti</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -177,15 +177,36 @@
   </url>
 
   <url>
-    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-praha/</loc>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-brno/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-mesta-srovnani/</loc>
     <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-ostrava/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autozastava24.cz/blog/pujcka-pod-zastavu-praha/</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.autozastava24.cz/blog/rychla-pujcka-vs-zastava-auta/</loc>
-    <lastmod>2025-12-06</lastmod>
+    <lastmod>2025-12-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

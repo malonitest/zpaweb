@@ -9,8 +9,11 @@ AutoZástava24 je český poskytovatel půjček zajištěných zástavou vozidla
 - **Částky:** 50 000 – 300 000 Kč
 - **Rychlost:** Schválení do 15 minut, výplata do 24 hodin
 - **Požadavky:** Vlastnictví vozidla, platný TP, občanský průkaz
-- **Úrok:** 15–22 % p.a. dle stavu vozidla
+- **Cena (nájemní částka):** 25–75 % z ceny auta za 12 měsíců
+- **Typicky:** 35–55 % z ceny auta za 12 měsíců
 - **Auto:** Zůstává u klienta, lze běžně používat
+
+Poznámka: Cena je vyjádřená jako **nájemní částka za 12 měsíců** (samostatný pojem; nemíchá se s úrokem/RPSN). Finální nabídka se stanovuje individuálně dle hodnoty a stavu vozidla a nastavení splácení.
 
 ## Proces
 
@@ -34,6 +37,7 @@ AutoZástava24 je český poskytovatel půjček zajištěných zástavou vozidla
 - Telefon: +420 469 778 999
 - E-mail: info@autozastava24.cz
 - Provozní doba: Po–Pá 8:00–18:00
+- Google recenze: https://share.google/UU8vk5YPXi2shnWRZ
 
 ## Důležité stránky
 

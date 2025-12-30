@@ -102,7 +102,7 @@ Available calculators: `payment`, `value`, `rpsn`. Script: `scripts/calculators.
 1. Create `/blog/article-slug/index.html`
 2. Copy structure from existing article (e.g., `jak-funguje-pujcka-pod-zastavu-auta/`)
 3. Include required schemas: BlogPosting + BreadcrumbList + FAQPage
-4. Add author attribution (currently "Martin Pražák" or "Rostislav Sikora")
+4. Add author attribution (Rostislav Sikora)
 5. **Run `npm run generate:sitemap`** - auto-discovers new article
 6. Update `blog/index.html` with new article card
 

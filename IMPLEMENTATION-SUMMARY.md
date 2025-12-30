@@ -122,7 +122,7 @@
   "headline": "...",
   "author": {
     "@type": "Person",
-    "name": "Martin Pražák",
+   "name": "Rostislav Sikora",
     "jobTitle": "Finanční poradce"
   },
   "publisher": {...},
