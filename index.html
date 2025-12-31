@@ -1882,8 +1882,9 @@
             Object.keys(payload).forEach(key => payload[key] === undefined && delete payload[key]);
             
             try {
-                // Call same-origin proxy (token is kept server-side)
-                const response = await fetch('/api/leads', {
+                // Call SWA proxy (token is kept server-side). Use www to avoid apex-domain proxy mismatches.
+                const apiBase = (window.location.hostname === 'www.autozastava24.cz') ? '' : 'https://www.autozastava24.cz';
+                const response = await fetch(apiBase + '/api/leads', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

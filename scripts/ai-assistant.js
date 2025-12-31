@@ -30,6 +30,8 @@
     sending: false
   };
 
+  const apiBase = (window.location.hostname === 'www.autozastava24.cz') ? '' : 'https://www.autozastava24.cz';
+
   const steps = {
     intro: {
       prompt: 'Ahoj! Jsem AI asistent AutoZástava24. Pomůžu vám vytvořit nezávaznou žádost. Začneme jménem a příjmením.'
@@ -179,7 +181,7 @@
           referrer: window.location.href
         };
 
-        const resp = await fetch('/api/leads', {
+        const resp = await fetch(apiBase + '/api/leads', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)

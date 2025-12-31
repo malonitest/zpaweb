@@ -49,9 +49,9 @@ module.exports = async function (context, req) {
   }
 
   const upstreamUrl = process.env.LEADS_UPSTREAM_URL;
-  const upstreamToken = process.env.LEADS_UPSTREAM_BEARER_TOKEN;
+  const upstreamTokenRaw = process.env.LEADS_UPSTREAM_BEARER_TOKEN;
 
-  if (!upstreamUrl || !upstreamToken) {
+  if (!upstreamUrl || !upstreamTokenRaw) {
     context.res = json({}, 500, {
       error: {
         message: 'Server configuration missing. Set LEADS_UPSTREAM_URL and LEADS_UPSTREAM_BEARER_TOKEN.'
@@ -59,6 +59,9 @@ module.exports = async function (context, req) {
     }, corsHeaders);
     return;
   }
+
+  const upstreamToken = String(upstreamTokenRaw).trim();
+  const authorizationHeader = upstreamToken.toLowerCase().startsWith('bearer ') ? upstreamToken : `Bearer ${upstreamToken}`;
 
   const body = req.body || {};
 
@@ -126,7 +129,7 @@ module.exports = async function (context, req) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${upstreamToken}`
+        'Authorization': authorizationHeader
       },
       body: JSON.stringify(payload)
     });
